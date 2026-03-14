@@ -77,7 +77,7 @@
   justify-content: center;
   border-radius: 16px;
   background-color: rgb(255, 255, 255);
-  height: 500px;
+  height: 480px;
   max-width: 600px;
   padding: 0 1.5rem;
   margin-top: 100px;
@@ -85,14 +85,27 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
 }
 
+.intro-links {
+  text-decoration: none;
+}
+
 .int-div1 {
   display: grid;
   justify-content: stretch;
   align-items: horizontal;
   gap: 4px;
-  padding-bottom: 6px;
+  padding-bottom: 20px;
+  text-align: center;
   line-height: 0.2;
   margin-top: 20px;
+  margin-left: 15px;
+}
+
+.subhead {
+  font-size: small;
+  font-weight: bold;
+  color: rgb(160, 159, 159);
+  margin-left: 1px;
 }
 
 .butt1 {
@@ -115,6 +128,18 @@
 
 .btr {
   width: 350px;
+  margin-top: 14px;
+  height: 0;
+}
+
+.btp {
+  font-size: smaller;
+  color:  rgb(160, 159, 159);
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 60px;
+  margin-left: 20px;
 }
 
 .butt-1 {
@@ -124,17 +149,48 @@
   gap: 4px;
 }
 
-.butt-1::before {
-  content: "🌐";
-  margin-right: 5px;
+.butt-1inner {
+  display: grid;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  max-width: 120px;
+  text-align: left;
+  margin-left: 10px;
+}
+.pb1 {
   font-size: 14px;
+  color: black;
+  font-weight: bold;
 }
 
-.butt-1inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 6px;
-  text-align: vertical;
+.pb2 {
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+}
+
+.arrow {
+  align-items: flex-end;
+  margin-left: 150px;
+  color: rgb(27, 146, 76);
+}
+
+.arrow2 {
+  align-items: flex-end;
+  margin-left: 95px;
+  color: rgb(27, 146, 76);
+}
+
+.arrow3 {
+  align-items: flex-end;
+  margin-left: 125px;
+  color: rgb(27, 146, 76);
+}
+
+.span {
+  font-size: small;
+  color:  rgb(27, 146, 76);
 }
 
 .butt2 {
@@ -162,17 +218,14 @@
   gap: 4px;
 }
 
-.butt-2::before {
-  content: "🏫";
-  margin-right: 5px;
-  font-size: 14px;
-}
-
 .butt-2inner {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 6px;
-  text-align: vertical;
+  text-align: left;
+  margin-left: 10px;
+  max-width: 200px;
 }
 
 .butt3 {
@@ -201,18 +254,16 @@
   gap: 4px;
 }
 
-.butt-3::before {
-  content: "🤖";
-  margin-right: 5px;
-  font-size: 14px;
+.butt-3inner {
+  display: grid;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  text-align: left;
+  margin-left: 10px;
+  max-width: 200px;
 }
 
-.butt-3inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 6px;
-  text-align: vertical;
-}
 
 .demo {
   font-weight: bold;
