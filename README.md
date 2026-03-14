@@ -97,7 +97,7 @@ Email: rayzmat44@gmail.com
 
 GitHub: https://github.com/rayzmat44
 
-Portfolio Live URL: https://rayzmat44.github.io/portfolio
+Portfolio Live URL: https://raymondrayz719.netlify.app
 
 # License
 
