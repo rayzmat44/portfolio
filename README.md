@@ -37,8 +37,11 @@ Portfolio/
 ├── css/
 │   └── style.css        # Styling for the website
 ├── js/
-│   └── main.js          # JavaScript functionality (if any)
-├── images/              # Images used in the portfolio
+│   └── main.js          # JavaScript functionality
+├── assets/
+         └── docs/
+         │ 
+          └── images# Images used in the portfolio
 └── README.md            # Project documentation
 
 All files are organized for clarity and ease of maintenance, following professional web development practices.
