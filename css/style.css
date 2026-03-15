@@ -23,7 +23,7 @@
   border-radius: 16px;
   background-color: rgb(255, 255, 255);
   padding: 20px;
-  height: 760px;
+  height: 700px;
   width: 700px;
   align-items: auto;
 }
@@ -34,7 +34,7 @@
   border-radius: 16px;
   background-color: rgb(255, 255, 255);
   padding: 20px;
-  height: 760px;
+  height: 700px;
   width: 700px;
   align-items: auto;
 }
@@ -45,10 +45,122 @@
   border-radius: 16px;
   background-color: rgb(255, 255, 255);
   padding: 20px;
-  height: 760px;
+  height: 700px;
   width: 700px;
   align-items: auto;
 }
+
+.card-span-up {
+  font-size: 13px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: gray;
+  font-weight: lighter;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.card-span-down {
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+  font-weight: lighter;
+  margin-top: 0;
+  letter-spacing: 1px;
+}
+.price-head {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.cardp {
+  font-size: medium;
+  line-height: 1.2;
+  font-weight: thin;
+  color: rgb(58, 57, 57);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.space-div {
+  padding: 10px;
+}
+
+.service-list {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  font-size: 14px;
+  line-height: 2;
+}
+.service-list li::before {
+  content: '✔';
+  font-weight: bold;
+  margin-right: 10px;
+  color: rgb(81, 202, 81);
+}
+
+.buttonlink {
+  text-decoration: none;
+}
+.get1 {
+  justify-content: center;
+  font-weight: bold;
+  width: 200px;
+  height: 40px;
+  border-radius: 8px;
+  margin-left: 30px;
+  margin-top: 100px;
+  background-color: transparent;
+  border-color: rgb(214, 214, 214);
+}
+
+.get1:hover {
+  color: white;
+  font-weight: bold;
+  border-color: rgb(158, 238, 158);
+  background-color: rgb(81, 202, 81);
+}
+
+.get2 {
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  width: 200px;
+  height: 40px;
+  border-radius: 8px;
+  margin-left: 30px;
+  margin-top: 72px;
+  border: gray solid 1px;
+  background-color: rgb(81, 202, 81);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(123, 250, 134, 0.5);
+}
+.get2:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+  box-shadow: 2px 8px 16px rgba(123, 250, 134, 0.9);
+}
+
+.get3 {
+  justify-content: center;
+  width: 200px;
+  height: 40px;
+  border-radius: 8px;
+  margin-left: 30px;
+  margin-top: 18px;
+}
+
+/* Payment section*/
+
+.payment {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+}
+
 
 .footer {
   background-color: rgb(12, 19, 48);
