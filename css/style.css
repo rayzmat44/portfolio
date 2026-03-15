@@ -6,6 +6,50 @@
 }
 
 
+/*Webservices styles*/
+.service-container {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  padding: 0 1.5rem;
+  gap: 20px;
+  position: relative;
+  background-color: #fafbf8;
+}
+
+.service-card1 {
+  border: gray solid 1px;
+  box-shadow: 0 6px 12px, rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  height: 760px;
+  width: 700px;
+  align-items: auto;
+}
+
+.service-card2 {
+  border: gray solid 1px;
+  box-shadow: 0 6px 12px, rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  height: 760px;
+  width: 700px;
+  align-items: auto;
+}
+
+.service-card3 {
+  border: gray solid 1px;
+  box-shadow: 0 6px 12px, rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  height: 760px;
+  width: 700px;
+  align-items: auto;
+}
+
 .footer {
   background-color: rgb(12, 19, 48);
   padding: 20px;
