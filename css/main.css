@@ -265,7 +265,7 @@
 }
 
 .intro-info-section {
-  margin-top: 100px;
+  margin-top: 50px;
   background-color: rgb(12, 19, 48);
   border-radius: 0;
   color: white;
@@ -356,9 +356,13 @@
   gap: 15px;
   padding: 0 1.5rem;
   margin-top: 50px;
+  margin-bottom: 60px;
 
 }
 
+.int-conts {
+  margin-bottom: 40px;
+}
 .stack1 {
   width: 400px;
   padding: 8px;
@@ -527,6 +531,9 @@
    box-shadow: 5, 7, 0 rgba(223, 88, 88, 0.88);
 }
 
+.cont {
+  margin-top: 50px;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -675,3 +682,63 @@
   font-weight: bold;
 }
 
+.span1 {
+  gap: 20px;
+  text-align: center;
+}
+.span1::before {
+  content: '⬇';
+  font-weight: bold;
+  margin-right: 10px;
+  color: rgb(255, 255, 255);
+}
+
+.card-in {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: stretch;
+}
+
+.card-in h1 {
+  max-width: 600px;
+  font-size: 2.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.pcin {
+  font-size: 1.1rem;
+  color: rgb(68, 67, 67);
+  line-height: 2;
+  max-width: 600px;
+}
+
+.offer-link {
+  text-decoration: none;
+  color: rgb(15, 207, 15);
+}
+
+.offer-button {
+  height: auto;
+  border-radius: 8px;
+  padding: 8px;
+  width: 150px;
+  border: gray solid 1px;
+  color: #f0f0f0;
+  font-weight: bolder;
+  font-size: medium;
+  transition: all 0.3s ease;
+  background-color: rgb(15, 207, 15);
+  box-shadow: 0 2px 4px, rgba(0, 0, 0, 0.1);
+}
+.offer-button:hover {
+  transform: translateY(-5px);
+  background-color: rgb(7, 107, 7);
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px, rgba(0, 0, 0, 0.4);
+}
+.carddiv {
+  align-items: flex-end;
+  padding-top: 100px;
+  margin-left: 100px;
+}
