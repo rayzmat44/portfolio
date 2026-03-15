@@ -1,8 +1,17 @@
+.body-projects {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+
+
 .footer {
   background-color: rgb(12, 19, 48);
   padding: 20px;
   color: rgb(165, 165, 165);
-  height: auto;
+  height: 100%;
+  margin-bottom: 0;
 }
 
 .footer-container {
