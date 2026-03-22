@@ -1,5 +1,6 @@
 #philosophy {
   padding: 0 1.5rem;
+  margin-bottom: 3rem;
 }
 
 #philosophy h1 {
@@ -116,11 +117,6 @@
   max-width: 450px;
   padding: 0;
 }
-.discovery p {
-  font-size: medium;
-  line-height: 1.4;
-}
-
 
 .architecture {
   max-width: 450px;
@@ -166,4 +162,91 @@
   font-weight: bold;
   color: rgb(33, 131, 33);
   margin-right: 12px;
+}
+
+.deliverable-list {
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 2rem;
+  text-align: left;
+  padding: 0;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  font-size: 17px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.deliverable-list li::before {
+  content: '✔';
+  font-weight: bold;
+  margin-right: 12px;
+  color: green;
+}
+
+.involve {
+  color: rgb(71, 71, 71);
+  margin-bottom: 2rem;
+}
+
+.explaination {
+  line-height: 1.5;
+  font-size: large;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.explanation {
+  line-height: 1.5;
+  font-size: large;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.ongoing {
+  padding:  1.5rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.ongoing-plan {
+  padding: 2rem;
+  display: flex;
+  justify-content: stretch;
+  text-align: left;
+  border: lightblue solid 1px;
+  border-radius: 12px;
+  background-color: rgb(221, 246, 255);
+  gap: 6rem;
+}
+
+.ongoing-text {
+  max-width: 650px;
+  line-height: 1.5;
+}
+
+.ongoing-text p {
+  color: rgb(82, 82, 82);
+}
+
+.ongoing-button {
+  margin-top: 3rem;
+  margin-right: 3rem;
+}
+
+.on-button {
+  height: 3rem;
+  width: 200px;
+  border: rgb(113, 219, 113) solid 1px;
+  border-radius: 10px;
+  background-color: rgb(65, 175, 65);
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  padding: 5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.on-button:hover {
+  transform: translateY(-5px);
+  background-color: green;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+
 }
