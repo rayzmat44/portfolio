@@ -145,3 +145,21 @@
   font-size: medium;
   color:  rgb(7, 105, 48);
 }
+
+/* lists */
+
+.activity-list {
+  list-style: none;
+  margin-left: 0;
+  text-align: left;
+  line-height: 1.5;
+  font-size: medium;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.activity-list li::before {
+  content: '–';
+  font-weight: bold;
+  color: rgb(33, 131, 33);
+  margin-right: 12px;
+}
