@@ -113,7 +113,8 @@
 /* phase content */
 
 .discovery {
-  width: auto;
+  max-width: 450px;
+  padding: 0;
 }
 .discovery p {
   font-size: medium;
@@ -122,12 +123,12 @@
 
 
 .architecture {
-  width: auto;
+  max-width: 450px;
 }
 
 .development {
   margin-left: 1rem;
-  width: auto;
+  max-width: 450px;
 }
 
 
@@ -151,14 +152,17 @@
 .activity-list {
   list-style: none;
   margin-left: 0;
+  margin-bottom: 2rem;
   text-align: left;
+  padding: 0;
+  letter-spacing: 1px;
   line-height: 1.5;
-  font-size: medium;
+  font-size: 17px;
   font-family: 'Times New Roman', Times, serif;
 }
 
 .activity-list li::before {
-  content: '–';
+  content: '➡';
   font-weight: bold;
   color: rgb(33, 131, 33);
   margin-right: 12px;
