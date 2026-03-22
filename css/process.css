@@ -1,0 +1,147 @@
+#philosophy {
+  padding: 0 1.5rem;
+}
+
+#philosophy h1 {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+#philosophy h2 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#philosophy h3 {
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.philosophy-text {
+  line-height: 1.5;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+}
+
+/* phase styles */
+
+#process-phase {
+  display: flex;
+  justify-content: stretch;
+  padding: 0 1.5rem;
+  margin-top: 3rem;
+  gap: 10px;
+}
+
+#phase-number1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 17px;
+  color: white;
+  background-color: rgba(44, 190, 44, 0.8);
+  align-items: center;
+  margin-left: 1.5rem;
+  text-align: center;
+  border: rgb(88, 185, 88) solid 1px;
+  height: 70px;
+  width: 70px;
+  border-radius: 60px;
+}
+
+#phase-number2 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 17px;
+  color: white;
+  background-color: rgba(44, 190, 44, 0.8);
+  align-items: center;
+  margin-left: 1.5rem;
+  text-align: center;
+  border: rgb(88, 185, 88) solid 1px;
+  height: 70px;
+  width: 70px;
+  border-radius: 60px;
+}
+
+#phase-number3 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 17px;
+  color: white;
+  background-color: rgba(44, 190, 44, 0.8);
+  align-items: center;
+  margin-left: auto;
+  text-align: center;
+  border: rgb(88, 185, 88) solid 1px;
+  height: 70px;
+  width: 70px;
+  border-radius: 60px;
+}
+
+.phase1, .phase2, .phase3 {
+  font-family: 'Times New Roman', Times, serif;
+}
+.phase1::after {
+  content: '–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–';
+  margin-left: 0;
+  font-weight: bold;
+  color: green;
+  
+}
+
+.phase2::after {
+  content: '–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–';
+  margin-left: 0;
+  font-weight: bold;
+  color: green;
+  
+}
+
+.phase3::after {
+  content: '–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–''–';
+  margin-left: 0;
+  font-weight: bold;
+  color: green;
+  
+}
+
+/* phase content */
+
+.discovery {
+  width: auto;
+}
+.discovery p {
+  font-size: medium;
+  line-height: 1.4;
+}
+
+
+.architecture {
+  width: auto;
+}
+
+.development {
+  margin-left: 1rem;
+  width: auto;
+}
+
+
+/* Content */
+
+.phase-head {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.duration {
+  margin-top: 0;
+  font-size: medium;
+  color:  rgb(7, 105, 48);
+}

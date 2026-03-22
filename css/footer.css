@@ -1,0 +1,165 @@
+.body-projects {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+
+
+.footer {
+  background-color: rgb(12, 19, 48);
+  padding: 20px;
+  color: rgb(165, 165, 165);
+  height: auto;
+  margin-bottom: 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+.footer-about {
+  max-width: 350px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 100px;
+  max-width: 600px;
+  margin-right: 60px;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+}
+
+.footer-list li:hover {
+  color: rgb(81, 202, 81);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.more {
+  max-width: 200px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  background-color: none;
+  text-decoration: none;
+}
+
+.social a {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: transparent;
+  max-width: 20px;
+  padding: 5px;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  border: gray solid 0.5px;
+  width: 50px;
+  height: 25px;
+}
+
+.social a:hover {
+  background-color: rgb(81, 202, 81);
+  transition: background-color 0.3s;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  color: rgb(133, 133, 133);
+}
+
+.footer-packs {
+  text-decoration: none;
+  color: rgb(165, 165, 165);
+}
+
+.footer-packs:hover {
+  color: rgb(81, 202, 81);
+}
+
+.fr {
+  font-weight: lighter;
+  margin-top: 2rem;
+  color: rgb(243, 243, 243);
+  background: rgb(243, 243, 243);
+  height: 0.1px;
+  position: relative;
+  border: rgb(243, 243, 243) solid 0.5px;
+}
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 34px;
+  margin-top: 10px;
+}
+
+.cta h1 {
+  font-size: 3rem;
+  padding: 0 1.5rem;
+  max-width: 600px;
+}
+
+.ref {
+  display: grid;
+  max-width: 500px;
+  flex-wrap: wrap;
+  text-align: left;
+  padding: 0 1.5rem;
+  margin-left: 0;
+  margin-right: 2rem;
+  margin-bottom: 3rem;
+  line-height: 2;
+  margin-top: 3rem;
+}
+
+.footer-hero {
+  font-size: 1.1rem;
+  color: rgb(68, 67, 67);
+  line-height: 2;
+}
+
+.cta-demo {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(81, 202, 81);
+  border-radius: 8px;
+  border: none;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  padding-left: 0;
+  padding-right: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.cta-demo:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+  background-color: rgb(7, 107, 7);
+}
+
+.cta-link {
+  color: white;
+  text-decoration: none;
+}

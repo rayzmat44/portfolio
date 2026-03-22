@@ -1,0 +1,322 @@
+/* Get in touch section and Form styles */
+
+.intro {
+  padding: 0 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+}
+
+.intro p {
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 2;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.intro-span {
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(12, 141, 12);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.intro-span::before {
+  content: '–' '–' '–';
+  font-weight: bold;
+  margin-right: 10px;
+  color: rgb(12, 141, 12);
+}
+
+#form-container {
+  display: flex;
+  justify-content: stretch;
+  padding: 0;
+  gap: 60px;
+  margin-bottom: 4rem;
+}
+
+.form-group {
+  display: flex;
+  justify-content: stretch;
+  gap: 0;
+}
+
+.form-group1 {
+  display: grid;
+  justify-content: stretch;
+  padding: 0 1.5rem;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+#form-margin {
+  margin-bottom: 1rem;
+}
+
+.form-input {
+  padding-left: 1rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  border: solid 1px;
+  border-radius: 8px;
+  width: 180px;
+}
+
+.form-input:focus {
+  border: green solid 1px;
+  box-shadow: 0 2px 4px rgba(7, 207, 107, 0.12);
+}
+
+.form-input2 {
+  border: gray solid 1px;
+  border-radius: 8px;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+input:focus {
+  background-color: green solid;
+  box-shadow: 0 2px 4px rgba(7, 207, 107, 0.12);
+}
+.form-group2 {
+  display: grid;
+  justify-content: stretch;
+  padding: 0 1.5rem;
+  gap: 0.5rem;
+}
+
+.form-comment {
+  padding: 0 1.5rem;
+  display: grid;
+  justify-content: stretch;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+.form-comment {
+  gap: 0.8rem;
+}
+.area {
+  min-height: 150px;
+  border: gray solid 1px;
+  border-radius: 8px;
+  resize: vertical;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.form-label {
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 0.75;
+}
+
+.form-button {
+  padding: 0 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.form-but {
+  padding: 10px;
+  border: gray solid 1px;
+  border-radius: 8px;
+  width: 200px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  background-color: rgb(49, 170, 49);
+}
+
+.form-but:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+  background-color: green;
+  box-shadow: 0 8px 16px rgba(110, 255, 110, 0.7);
+}
+
+/* Form card details */
+.form-card1 {
+  border: rgb(196, 196, 196) solid 1px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 16px;
+  padding: 0 1.5rem;
+  padding-left: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  margin-left: 0;
+}
+
+.form-card1 h2 {
+  font-size: large;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 2rem;
+  margin-top: 2.5rem;
+}
+
+.whatsapp {
+  display: flex;
+  justify-content: stretch;
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+.form-icon {
+  text-align: center;
+  border-radius: 10px;
+  padding: 8px;
+  background-color: rgb(222, 252, 222);
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.form-card-text {
+  margin-top: 2px;
+  color: black;
+  font-weight: bold;
+}
+
+.form-card-link {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.form-card-link:hover {
+  color: green;
+}
+
+.form-card-span {
+  color: gray;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.02rem;
+  font-weight: bold;
+}
+
+.email {
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: stretch;
+  gap: 10px;
+}
+
+.location {
+  margin-top: 0;
+  display: flex;
+  justify-content: stretch;
+  gap: 10px;
+}
+
+.response {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  border-radius: 10px;
+  padding: 8px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-weight: bold;
+  color: darkgreen;
+  width: fit-content;
+  background-color: rgb(155, 255, 172);
+}
+
+
+/* How I Can Help Styles */
+
+#help {
+  padding: 0 1.5rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  font-weight: 1.5rem;
+  font-family:'Times New Roman', Times, serif;
+}
+
+#help h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 1.5rem;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.help {
+  display: flex;
+  justify-content: stretch;
+  gap: 8rem;
+  padding: 0 1.5rem;
+  position: relative;
+}
+
+.help-list {
+  list-style: none;
+  margin-left: 0;
+  text-wrap: nowrap;
+  text-align: left;
+  line-height: 2;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.help-list li::before {
+  content: '✔';
+  font-weight: bold;
+  color: green;
+  margin-right: 20px;
+}
+
+.design {
+  position: relative;
+}
+.design::after {
+  content: '';
+  position: absolute;
+  right: -4rem;
+  top: 0;
+  bottom: 0;
+  height: auto;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #e5e7eb 20%,
+    #afafaf 80%,
+    transparent 100%
+  );
+}
+
+.strategy {
+  position: relative;
+}
+.strategy::after {
+  content: '';
+  position: absolute;
+  right: -4rem;
+  top: 0;
+  bottom: 0;
+  height: auto;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #e5e7eb 20%,
+    #afafaf 80%,
+    transparent 100%
+  );
+}

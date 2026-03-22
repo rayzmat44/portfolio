@@ -1,0 +1,235 @@
+.body-about {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.about-intro {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.story-container {
+  display: flex;
+  justify-content: stretch;
+  padding: 0 1.5rem;
+  gap: 90px;
+}
+
+.story-img {
+  border-radius: 16px;
+  border: rgb(255, 253, 253) solid 1px;
+  height: 500px;
+  margin-top: 20px;
+  background-color: #fcfcfc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.story-img h3 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: larger;
+  margin-bottom: 4px;
+}
+
+.story-img-text p {
+  font-family: sans-serif;
+  color: rgb(117, 117, 117);
+  font-size: 0.8rem;
+  margin-bottom: 3rem;
+}
+
+.story-img span {
+  margin-top: 0;
+  color: rgb(117, 117, 117);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+}
+
+.story-img-text {
+  padding-left: 20px;
+}
+
+.best-pic {
+  height: 280px;
+  width: 300px;
+  padding: 0;
+  border: none;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.about-button {
+  height: auto;
+  width: 250px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+  background-color: rgb(79, 216, 79);
+  border-radius: 8px;
+  border: rgb(79, 216, 79) solid 1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.about-button:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+  border-color: rgb(61, 170, 61);
+  background-color: rgb(60, 170, 60);
+  box-shadow: 4px 8px 16px rgb(61, 170, 61);
+}
+
+.story-span {
+  color: green;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.story-span::before {
+  content: '–' '–' '–';
+  font-weight: bold;
+  margin-right: 10px;
+  color: green;
+}
+
+.story {
+  line-height: 1.7;
+  font-family: sans-serif;
+}
+
+.category {
+  display: flex;
+  justify-content: stretch;
+  gap: 40px;
+  padding: 0 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+.category1 {
+  position: relative;
+  font-family: sans-serif;
+  font-weight: 400;
+  text-align: left;
+  max-width: 700px;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.category1 p {
+  max-width: 500px;
+}
+
+.category2 {
+  border-radius: 16px;
+  padding: 15px;
+  font-family: sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.category2 p {
+  max-width: 500px
+}
+
+.category1::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 0;
+  bottom: 0;
+  height: auto;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #e5e7eb 20%,
+    #bcbdc0 80%,
+    transparent 100%
+  );
+}
+
+.cat-head {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.category-list {
+  list-style: none;
+  text-align: left;
+  margin-left: 0;
+  font-family: sans-serif;
+  line-height: 2;
+}
+
+.category-list li::before {
+  content: '–';
+  font-weight: bold;
+  color: green;
+  margin-right: 10px;
+}
+
+.category-list2 {
+  list-style: none;
+  font-family: sans-serif;
+  line-height: 2;
+}
+
+.category-list2 li::before {
+  content: '✔';
+  font-weight: bold;
+  color: green;
+  margin-right: 10px;
+}
+
+.foundations {
+  padding: 0 1.5rem;
+}
+
+.foundation-stack {
+  border: solid 1px;
+  border-radius: 16px;
+  border-color: darkblue;
+  background-color: rgb(241, 249, 252);
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.foundation-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.foundation-list li {
+  border: gray solid 1px;
+  border-radius: 8px;
+  border-color: green;
+  background-color: rgb(227, 240, 227);
+  color: darkgreen;
+  font-weight: bold;
+  font-size: small;
+  margin-bottom: 8px;
+  padding: 8px;
+  max-width: fit-content;
+}
+
+.payment {
+  font-family: sans-serif;
+  justify-content: stretch;
+  align-items: center;
+  padding: 0 1.5rem;
+  line-height: 1.5;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 16px;
+  background-color: rgb(255, 233, 193);
+  height: auto;
+  border: rgb(255, 170, 131) solid 1px;
+}

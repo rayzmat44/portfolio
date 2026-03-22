@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raymond Matovu — Custom Digital Systems for Schools & Businesses</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Nunito:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ========================================
+   DESIGN SYSTEM
+   ======================================== */
+:root {
+  --green: #07cf6b;
+  --green-dark: #05a855;
+  --green-darker: #047a40;
+  --green-pale: #e8fdf2;
+  --green-muted: #d0f5e3;
+  --navy: #0f1e35;
+  --navy-mid: #1a2f4a;
+  --navy-light: #243b5c;
+  --amber: #e8970a;
+  --amber-pale: #fef5e4;
+  --slate-50: #f8f9fa;
+  --slate-100: #f1f3f5;
+  --slate-200: #e9ecef;
+  --slate-300: #dee2e6;
+  --slate-400: #ced4da;
+  --slate-500: #adb5bd;
+  --slate-600: #6c757d;
+  --slate-700: #495057;
+  --slate-800: #343a40;
+  --slate-900: #212529;
+  --white: #ffffff;
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Nunito', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Page bg is light */
+  --bg: #fafbf8;
+  --bg-card: #ffffff;
+  --border: #e8ece5;
+  --border-strong: #d0d8ca;
+  --text-primary: #111815;
+  --text-secondary: #4a5548;
+  --text-muted: #8a9488;
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.06);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(250,251,248,0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  height: 68px;
+  display: flex; align-items: center;
+}
+.nav-inner {
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+  display: flex; 
+  align-items: center;
+   justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.2rem; font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.nav-logo-mark {
+  width: 32px; height: 32px;
+  background: var(--green);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-family: var(--font-display); font-weight: 800; font-size: 0.9rem;
+}
+.nav-links {
+  display: flex; align-items: center; gap: 0.125rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.875rem; font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.45rem 0.85rem;
+  border-radius: 7px;
+  transition: all 0.18s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--text-primary); background: var(--slate-100); }
+.nav-links a.active { color: var(--green-darker); }
+.nav-cta {
+  font-size: 0.875rem; font-weight: 700;
+  background: var(--green);
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.18s, transform 0.18s;
+  box-shadow: 0 2px 8px rgba(7,207,107,0.3);
+}
+.nav-cta:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 6px;
+}
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: all 0.3s; }
+
+.mobile-menu {
+  display: none; position: fixed; top: 68px; left: 0; right: 0; bottom: 0;
+  background: var(--bg); z-index: 199; padding: 2rem 1.5rem;
+  flex-direction: column; gap: 0;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 1.25rem; font-weight: 700; font-family: var(--font-display);
+  color: var(--text-primary); text-decoration: none;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.18s;
+}
+.mobile-menu a:hover { color: var(--green); }
+
+/* ========================================
+   PAGES
+   ======================================== */
+.page { display: none; padding-top: 68px; min-height: 100vh; }
+.page.active { display: block; }
+
+/* ========================================
+   CONTAINERS & LAYOUT
+   ======================================== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+.container-sm { max-width: 780px; margin: 0 auto; padding: 0 1.5rem; }
+
+section { padding: 5.5rem 0; }
+section.tight { padding: 3.5rem 0; }
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--green-darker);
+  margin-bottom: 0.75rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.section-label::before { content: ''; display: block; width: 1.5rem; height: 2px; background: var(--green); }
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+.section-sub {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 540px;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+/* ========================================
+   HERO
+   ======================================== */
+.hero {
+  min-height: calc(100vh - 68px);
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  padding: 4rem 0;
+}
+
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 75% 50%, rgba(7,207,107,0.07) 0%, transparent 70%),
+    linear-gradient(180deg, var(--bg) 0%, #f0f5ee 100%);
+}
+
+/* Grid pattern overlay */
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(7,207,107,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7,207,107,0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 75% 50%, black 20%, transparent 65%);
+  -webkit-mask-image: radial-gradient(ellipse at 75% 50%, black 20%, transparent 65%);
+}
+
+.hero-inner {
+  position: relative; z-index: 1;
+  max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+  display: grid; grid-template-columns: 1fr 420px; gap: 5rem; align-items: center;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--green-darker);
+  margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.hero-eyebrow-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--green);
+  animation: breathe 2.5s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%,100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--green-darker);
+}
+.hero h1 strong {
+  font-style: normal;
+  display: block;
+}
+
+.hero-desc {
+  font-size: 1.1rem; color: var(--text-secondary);
+  max-width: 500px; line-height: 1.75; margin-bottom: 2.5rem;
+}
+
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem; font-weight: 700;
+  padding: 0.8rem 1.75rem;
+  background: var(--green);
+  color: white; text-decoration: none; border: none;
+  border-radius: 10px; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(7,207,107,0.3);
+  transition: all 0.2s;
+}
+.btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(7,207,107,0.4); }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem; font-weight: 600;
+  padding: 0.8rem 1.75rem;
+  background: transparent;
+  color: var(--text-primary); text-decoration: none; border: 2px solid var(--border-strong);
+  border-radius: 10px; cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-secondary:hover { border-color: var(--green); color: var(--green-darker); background: var(--green-pale); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 0.375rem;
+  font-size: 0.875rem; font-weight: 600;
+  color: var(--green-darker); text-decoration: none;
+  padding: 0.4rem 0; border: none; background: none; cursor: pointer;
+  transition: gap 0.2s;
+}
+.btn-ghost:hover { gap: 0.6rem; }
+
+/* Hero trust bar */
+.hero-trust {
+  display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;
+}
+.trust-stat { display: flex; flex-direction: column; }
+.trust-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--text-primary); line-height: 1;
+}
+.trust-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 500; margin-top: 0.125rem; }
+.trust-divider { width: 1px; height: 36px; background: var(--border-strong); }
+
+/* Hero card */
+.hero-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+}
+.hero-card-header {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.hero-card-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: var(--green-pale);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem;
+}
+.hero-card-title { font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
+.hero-card-sub { font-size: 0.75rem; color: var(--text-muted); }
+
+.hero-service-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.hero-service-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--slate-50);
+  border-radius: 10px; border: 1px solid var(--border);
+  transition: all 0.18s; cursor: pointer;
+}
+.hero-service-item:hover { border-color: var(--green); background: var(--green-pale); }
+.hero-service-item-icon { font-size: 1.1rem; flex-shrink: 0; }
+.hero-service-item-text { flex: 1; }
+.hero-service-item-name { font-size: 0.875rem; font-weight: 700; }
+.hero-service-item-price {
+  font-family: var(--font-mono);
+  font-size: 0.72rem; color: var(--green-darker);
+  font-weight: 500;
+}
+.hero-service-item-arrow { color: var(--slate-400); font-size: 0.8rem; }
+
+/* ========================================
+   PROBLEM/SOLUTION
+   ======================================== */
+.problem-solution {
+  background: var(--navy);
+  padding: 5.5rem 0;
+  position: relative; overflow: hidden;
+}
+.problem-solution::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 60% 70% at 50% 100%, rgba(7,207,107,0.07) 0%, transparent 70%);
+}
+.ps-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+  align-items: start;
+}
+.ps-col-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.ps-problem .ps-col-label { color: #f87171; }
+.ps-solution .ps-col-label { color: var(--green); }
+.ps-problem .ps-col-label::before { content: ''; width: 1.5rem; height: 2px; background: #f87171; display: block; }
+.ps-solution .ps-col-label::before { content: ''; width: 1.5rem; height: 2px; background: var(--green); display: block; }
+
+.ps-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem; font-weight: 700;
+  color: white; margin-bottom: 1.5rem; line-height: 1.2;
+}
+.ps-items { display: flex; flex-direction: column; gap: 0.75rem; }
+.ps-item {
+  display: flex; gap: 0.75rem;
+  font-size: 0.9rem; line-height: 1.6;
+}
+.ps-problem .ps-item { color: #fca5a5; }
+.ps-solution .ps-item { color: #86efac; }
+.ps-item-icon { flex-shrink: 0; font-size: 0.9rem; margin-top: 0.15rem; }
+
+.ps-divider {
+  width: 1px; background: rgba(255,255,255,0.1);
+  position: relative; display: flex; align-items: center; justify-content: center;
+}
+.ps-divider-vs {
+  background: var(--navy); border: 1px solid rgba(255,255,255,0.1);
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ========================================
+   SERVICE CARDS
+   ======================================== */
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.2s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--border);
+  transition: background 0.2s;
+}
+.service-card:hover { border-color: var(--green-muted); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.service-card:hover::before { background: var(--green); }
+.service-card.featured {
+  border-color: var(--green-muted);
+  box-shadow: var(--shadow-md);
+}
+.service-card.featured::before { background: var(--green); }
+.featured-badge {
+  position: absolute; top: 1.25rem; right: 1.25rem;
+  font-family: var(--font-mono); font-size: 0.62rem; font-weight: 500;
+  padding: 0.2rem 0.6rem;
+  background: var(--green-pale);
+  color: var(--green-darker); border-radius: 100px;
+  border: 1px solid var(--green-muted);
+}
+.service-icon {
+  width: 52px; height: 52px; border-radius: 14px;
+  background: var(--green-pale);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 1.25rem;
+}
+.service-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem; font-weight: 700;
+  margin-bottom: 0.375rem;
+}
+.service-price {
+  font-family: var(--font-mono);
+  font-size: 0.875rem; font-weight: 500;
+  color: var(--green-darker);
+  margin-bottom: 1rem;
+}
+.service-desc { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.25rem; }
+.service-features { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+.service-feature {
+  display: flex; gap: 0.5rem; align-items: flex-start;
+  font-size: 0.825rem; color: var(--text-secondary);
+}
+.service-feature-check { color: var(--green); font-size: 0.75rem; margin-top: 0.125rem; flex-shrink: 0; }
+
+/* ========================================
+   PRICING TABLE
+   ======================================== */
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+.pricing-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  display: flex; flex-direction: column;
+  transition: all 0.2s;
+}
+.pricing-card.popular {
+  border-color: var(--green);
+  box-shadow: 0 0 0 4px rgba(7,207,107,0.08), var(--shadow-md);
+  position: relative;
+}
+.popular-tag {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: var(--green);
+  color: white;
+  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 600;
+  padding: 0.25rem 1rem; border-radius: 100px;
+  letter-spacing: 0.05em; text-transform: uppercase;
+}
+.pricing-tier-name {
+  font-family: var(--font-mono);
+  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+.pricing-price {
+  font-family: var(--font-display);
+  font-size: 2rem; font-weight: 800;
+  color: var(--text-primary); line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.pricing-currency {
+  font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+.pricing-desc { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+.pricing-features { flex: 1; display: flex; flex-direction: column; gap: 0.625rem; margin-bottom: 2rem; }
+.pricing-feature {
+  display: flex; gap: 0.625rem; align-items: flex-start;
+  font-size: 0.85rem; color: var(--text-secondary);
+}
+.pricing-feature-check { color: var(--green); flex-shrink: 0; font-size: 0.85rem; }
+
+/* ========================================
+   PROCESS TIMELINE
+   ======================================== */
+.process-steps {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute; top: 30px; left: 15%; right: 15%;
+  height: 2px; background: linear-gradient(90deg, var(--green), var(--green-dark));
+  z-index: 0;
+}
+.process-step { position: relative; z-index: 1; }
+.process-step-num {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--green); color: white;
+  font-family: var(--font-display); font-size: 1.2rem; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 0 6px rgba(7,207,107,0.12);
+}
+.process-step-duration {
+  font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500;
+  color: var(--green-darker); letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.process-step-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;
+}
+.process-step-desc { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; }
+.deliverables-list { display: flex; flex-direction: column; gap: 0.4rem; }
+.deliverable {
+  font-size: 0.8rem; color: var(--text-secondary);
+  display: flex; gap: 0.5rem; align-items: center;
+}
+.deliverable::before { content: '→'; color: var(--green); font-size: 0.7rem; flex-shrink: 0; }
+
+/* ========================================
+   CASE STUDY
+   ======================================== */
+.case-study-hero {
+  background: var(--navy); padding: 5rem 0 0;
+  position: relative; overflow: hidden;
+}
+.case-study-hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+  background: var(--bg);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+.cs-meta {
+  display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;
+}
+.cs-badge {
+  font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500;
+  padding: 0.3rem 0.8rem; border-radius: 6px;
+}
+.cs-badge.type { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.12); }
+.cs-badge.status { background: rgba(7,207,107,0.15); color: #86efac; border: 1px solid rgba(7,207,107,0.3); }
+.cs-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 800;
+  color: white; max-width: 700px; margin-bottom: 1.5rem;
+  line-height: 1.15;
+}
+.cs-excerpt { font-size: 1.1rem; color: rgba(255,255,255,0.65); max-width: 580px; line-height: 1.7; margin-bottom: 4rem; }
+.cs-stats-bar {
+  display: flex; gap: 3rem; padding: 2rem 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.cs-stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem; font-weight: 800; color: var(--green); line-height: 1;
+}
+.cs-stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-top: 0.2rem; }
+
+.case-study-body {
+  display: grid; grid-template-columns: 1fr 280px; gap: 4rem;
+  padding: 4rem 0;
+}
+.cs-section { margin-bottom: 3.5rem; }
+.cs-section-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem; font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem; border-bottom: 2px solid var(--green-pale);
+}
+.cs-section p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem; }
+.cs-tech-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+.cs-tech-tag {
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500;
+  padding: 0.25rem 0.625rem;
+  background: var(--green-pale); color: var(--green-darker);
+  border-radius: 6px; border: 1px solid var(--green-muted);
+}
+
+.cs-sidebar-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.5rem; margin-bottom: 1.25rem;
+}
+.cs-sidebar-title {
+  font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;
+}
+.cs-sidebar-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.5rem 0; border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+.cs-sidebar-item:last-child { border-bottom: none; }
+.cs-sidebar-item-label { color: var(--text-muted); }
+.cs-sidebar-item-val { font-weight: 600; color: var(--text-primary); }
+
+/* ========================================
+   CONTACT
+   ======================================== */
+.contact-grid { display: grid; grid-template-columns: 1fr 380px; gap: 4rem; align-items: start; }
+.form { display: flex; flex-direction: column; gap: 1.25rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.form-label {
+  font-size: 0.8rem; font-weight: 700; color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+.form-input, .form-textarea, .form-select {
+  font-family: var(--font-body); font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 10px; color: var(--text-primary);
+  transition: border-color 0.18s, box-shadow 0.18s;
+  outline: none; width: 100%;
+}
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  border-color: var(--green); box-shadow: 0 0 0 3px rgba(7,207,107,0.12);
+}
+.form-textarea { min-height: 140px; resize: vertical; }
+
+.contact-info-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 2rem; margin-bottom: 1.25rem;
+}
+.contact-info-title {
+  font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+.contact-method {
+  display: flex; gap: 0.875rem; align-items: flex-start;
+  padding: 0.875rem 0; border-bottom: 1px solid var(--border);
+}
+.contact-method:last-child { border-bottom: none; }
+.contact-method-icon {
+  width: 36px; height: 36px; border-radius: 9px;
+  background: var(--green-pale); display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; flex-shrink: 0;
+}
+.contact-method-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 500; }
+.contact-method-val { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
+.contact-method-val a { color: inherit; text-decoration: none; }
+.contact-method-val a:hover { color: var(--green-darker); }
+
+.social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.625rem; }
+.social-btn {
+  display: flex; align-items: center; justify-content: center; gap: 0.375rem;
+  padding: 0.625rem; border-radius: 9px;
+  background: var(--slate-50); border: 1px solid var(--border);
+  font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);
+  text-decoration: none; transition: all 0.18s;
+}
+.social-btn:hover { border-color: var(--green-muted); background: var(--green-pale); color: var(--green-darker); }
+
+/* ========================================
+   TESTIMONIALS
+   ======================================== */
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.testimonial-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 2rem;
+  display: flex; flex-direction: column;
+  transition: all 0.2s;
+}
+.testimonial-card:hover { box-shadow: var(--shadow-md); border-color: var(--green-muted); }
+.testimonial-stars { color: var(--amber); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 2px; }
+.testimonial-text {
+  font-family: var(--font-display); font-style: italic;
+  font-size: 1rem; line-height: 1.7; color: var(--text-primary);
+  margin-bottom: 1.5rem; flex: 1;
+}
+.testimonial-author { display: flex; gap: 0.75rem; align-items: center; }
+.author-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-pale), var(--green-muted));
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 1rem;
+  color: var(--green-darker); flex-shrink: 0;
+}
+.author-name { font-weight: 700; font-size: 0.9rem; }
+.author-role { font-size: 0.75rem; color: var(--text-muted); }
+
+/* ========================================
+   FAQ ACCORDION
+   ======================================== */
+.faq-list { display: flex; flex-direction: column; gap: 0; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:last-child { border-bottom: none; }
+.faq-question {
+  width: 100%; text-align: left; padding: 1.375rem 1.5rem;
+  background: var(--bg-card); border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  font-family: var(--font-body); font-size: 0.95rem; font-weight: 700;
+  color: var(--text-primary); transition: background 0.18s;
+}
+.faq-question:hover { background: var(--slate-50); }
+.faq-question.open { background: var(--green-pale); color: var(--green-darker); }
+.faq-icon { font-size: 1rem; flex-shrink: 0; color: var(--text-muted); transition: transform 0.2s; }
+.faq-question.open .faq-icon { transform: rotate(45deg); color: var(--green-darker); }
+.faq-answer {
+  display: none; padding: 0 1.5rem 1.375rem;
+  background: var(--green-pale); border-top: 1px solid var(--green-muted);
+  font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75;
+}
+.faq-answer.open { display: block; }
+
+/* ========================================
+   RESUME
+   ======================================== */
+.resume-layout { display: grid; grid-template-columns: 260px 1fr; gap: 3rem; }
+.resume-sidebar-section { margin-bottom: 2.5rem; }
+.resume-sidebar-title {
+  font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--green-darker);
+  margin-bottom: 1rem; padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--green-pale);
+}
+.skill-chip {
+  display: inline-block;
+  font-family: var(--font-mono); font-size: 0.72rem;
+  padding: 0.3rem 0.7rem;
+  background: var(--green-pale); border: 1px solid var(--green-muted);
+  color: var(--green-darker); border-radius: 6px;
+  margin: 0.2rem;
+}
+.resume-exp-item { margin-bottom: 2rem; }
+.resume-exp-title { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; margin-bottom: 0.25rem; }
+.resume-exp-meta { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.75rem; display: flex; gap: 1rem; }
+.resume-exp-desc { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; }
+
+.timeline-item { display: flex; gap: 1.25rem; margin-bottom: 1.75rem; }
+.timeline-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--green); flex-shrink: 0; margin-top: 4px;
+  box-shadow: 0 0 0 4px rgba(7,207,107,0.15);
+}
+.timeline-content { flex: 1; border-left: 2px solid var(--green-pale); padding-left: 1.25rem; margin-left: -7px; }
+
+/* ========================================
+   ABOUT
+   ======================================== */
+.about-grid { display: grid; grid-template-columns: 320px 1fr; gap: 5rem; align-items: start; }
+.about-photo-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
+  overflow: hidden; box-shadow: var(--shadow-sm);
+  position: sticky; top: 88px;
+}
+.about-photo {
+  height: 280px; background: linear-gradient(135deg, #e8fdf2 0%, #c3f0d8 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem; border-bottom: 1px solid var(--border);
+}
+.about-photo-body { padding: 1.5rem; }
+.about-name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
+.about-role { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+.about-loc {
+  font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);
+  display: flex; align-items: center; gap: 0.375rem; margin-bottom: 1.5rem;
+}
+.about-content h2 {
+  font-family: var(--font-display); font-size: 1.5rem; font-weight: 700;
+  margin-bottom: 1rem; margin-top: 2.5rem;
+}
+.about-content h2:first-child { margin-top: 0; }
+.about-content p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.1rem; font-size: 0.95rem; }
+
+/* ========================================
+   BLOG
+   ======================================== */
+.blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.blog-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden;
+  transition: all 0.2s; cursor: pointer;
+}
+.blog-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--green-muted); }
+.blog-card-thumb {
+  height: 180px;
+  background: linear-gradient(135deg, var(--green-pale), var(--green-muted));
+  display: flex; align-items: center; justify-content: center; font-size: 3rem;
+}
+.blog-card-body { padding: 1.5rem; }
+.blog-card-meta {
+  display: flex; gap: 1rem; margin-bottom: 0.75rem;
+  font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);
+}
+.blog-card-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.3; }
+.blog-card-preview { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 1rem; }
+.blog-tag {
+  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 500;
+  padding: 0.2rem 0.5rem; background: var(--green-pale); color: var(--green-darker);
+  border-radius: 4px; margin-right: 0.375rem; border: 1px solid var(--green-muted);
+}
+
+/* ========================================
+   PROJECTS
+   ======================================== */
+.projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.project-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden; transition: all 0.2s; cursor: pointer;
+}
+.project-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--green-muted); }
+.project-thumb {
+  height: 160px;
+  display: flex; align-items: center; justify-content: center; font-size: 3rem;
+}
+.project-body { padding: 1.5rem; }
+.project-status-badge {
+  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 500;
+  padding: 0.2rem 0.6rem; border-radius: 100px; margin-bottom: 0.75rem;
+  display: inline-block;
+}
+.status-live { background: rgba(7,207,107,0.12); color: var(--green-darker); border: 1px solid rgba(7,207,107,0.3); }
+.status-building { background: rgba(232,151,10,0.12); color: var(--amber); border: 1px solid rgba(232,151,10,0.3); }
+.project-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+.project-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 1rem; }
+.project-tags-row { display: flex; gap: 0.375rem; flex-wrap: wrap; }
+.project-tag {
+  font-family: var(--font-mono); font-size: 0.65rem;
+  padding: 0.2rem 0.5rem; border-radius: 4px;
+  background: var(--slate-100); border: 1px solid var(--border); color: var(--text-muted);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+footer {
+  background: var(--navy); padding: 4rem 0 2.5rem;
+}
+.footer-top {
+  display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 2.5rem;
+}
+.footer-brand-name {
+  font-family: var(--font-display); font-size: 1.25rem; font-weight: 700;
+  color: white; margin-bottom: 0.75rem;
+}
+.footer-brand-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 220px; margin-bottom: 1.5rem; }
+.footer-social { display: flex; gap: 0.5rem; }
+.footer-social-link {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.875rem;
+  transition: all 0.18s;
+}
+.footer-social-link:hover { background: var(--green); border-color: var(--green); color: white; }
+.footer-col-title {
+  font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1.25rem;
+}
+.footer-links-list { display: flex; flex-direction: column; gap: 0.625rem; }
+.footer-link {
+  font-size: 0.875rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.18s;
+}
+.footer-link:hover { color: var(--green); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+.footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+.footer-location {
+  font-family: var(--font-mono); font-size: 0.72rem; color: rgba(255,255,255,0.3);
+  display: flex; align-items: center; gap: 0.375rem;
+}
+
+/* ========================================
+   UTILITY
+   ======================================== */
+.divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+.bg-green-pale { background: var(--green-pale); }
+.bg-slate { background: var(--slate-50); }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-1 { animation: fadeUp 0.5s ease both; }
+.fade-2 { animation: fadeUp 0.5s 0.12s ease both; }
+.fade-3 { animation: fadeUp 0.5s 0.24s ease both; }
+.fade-4 { animation: fadeUp 0.5s 0.38s ease both; }
+.fade-5 { animation: fadeUp 0.5s 0.52s ease both; }
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 900px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-card { display: none; }
+  .ps-grid { grid-template-columns: 1fr; }
+  .ps-divider { display: none; }
+  .services-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .process-steps::before { display: none; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .case-study-body { grid-template-columns: 1fr; }
+  .resume-layout { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo-card { position: static; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 600px) {
+  section { padding: 3.5rem 0; }
+  .hero h1 { font-size: 2rem; }
+  .hero-ctas { flex-direction: column; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .cs-stats-bar { flex-wrap: wrap; gap: 1.5rem; }
+  .pricing-card.popular { margin-top: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========================================
+     NAVIGATION
+     ======================================== -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#" onclick="navigate('home')">
+      <div class="nav-logo-mark">RM</div>
+      Raymond Matovu
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="navigate('home')" id="nav-home" class="active">Home</a></li>
+      <li><a href="#" onclick="navigate('services')" id="nav-services">Services</a></li>
+      <li><a href="#" onclick="navigate('projects')" id="nav-projects">Projects</a></li>
+      <li><a href="#" onclick="navigate('about')" id="nav-about">About</a></li>
+      <li><a href="#" onclick="navigate('design')" id="nav-design">Process</a></li>
+      <li><a href="#" onclick="navigate('blog')" id="nav-blog">Blog</a></li>
+    </ul>
+    <div style="display:flex;gap:0.5rem;align-items:center;">
+      <a href="#" class="nav-cta" onclick="navigate('contact')">Book a Demo</a>
+      <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="navigate('home');toggleMobile()">Home</a>
+  <a href="#" onclick="navigate('services');toggleMobile()">Services & Pricing</a>
+  <a href="#" onclick="navigate('projects');toggleMobile()">Projects</a>
+  <a href="#" onclick="navigate('about');toggleMobile()">About Me</a>
+  <a href="#" onclick="navigate('design');toggleMobile()">My Process</a>
+  <a href="#" onclick="navigate('case');toggleMobile()">Case Studies</a>
+  <a href="#" onclick="navigate('blog');toggleMobile()">Blog</a>
+  <a href="#" onclick="navigate('faq');toggleMobile()">FAQ</a>
+  <a href="#" onclick="navigate('contact');toggleMobile()">Contact</a>
+</div>
+
+<!-- ========================================
+     HOME PAGE
+     ======================================== -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-eyebrow fade-1">
+          <div class="hero-eyebrow-dot"></div>
+          Kampala, Uganda · Custom Software Development
+        </div>
+        <h1 class="fade-2">
+          Custom Digital Systems That
+          <em>Eliminate Administrative</em>
+          <strong>Chaos.</strong>
+        </h1>
+        <p class="hero-desc fade-3">
+          I build school management systems and business automation tools for Ugandan institutions — so you spend less time on paperwork and more time on what actually matters.
+        </p>
+        <div class="hero-ctas fade-4">
+          <a class="btn-primary" href="#" onclick="navigate('contact')">📅 Book a Free Demo</a>
+          <a class="btn-secondary" href="#" onclick="navigate('case')">View Case Studies</a>
+        </div>
+        <div class="hero-trust fade-5">
+          <div class="trust-stat">
+            <span class="trust-num">5+</span>
+            <span class="trust-label">Systems Shipped</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-stat">
+            <span class="trust-num">3</span>
+            <span class="trust-label">Schools Served</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-stat">
+            <span class="trust-num">450K</span>
+            <span class="trust-label">Starting Price UGX</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-card-icon">⚙️</div>
+            <div>
+              <div class="hero-card-title">What I Can Build For You</div>
+              <div class="hero-card-sub">Pick a service to learn more</div>
+            </div>
+          </div>
+          <div class="hero-service-list">
+            <div class="hero-service-item" onclick="navigate('services')">
+              <div class="hero-service-item-icon">🌐</div>
+              <div class="hero-service-item-text">
+                <div class="hero-service-item-name">Starter Website</div>
+                <div class="hero-service-item-price">From 450,000 UGX</div>
+              </div>
+              <div class="hero-service-item-arrow">›</div>
+            </div>
+            <div class="hero-service-item" onclick="navigate('services')">
+              <div class="hero-service-item-icon">🏫</div>
+              <div class="hero-service-item-text">
+                <div class="hero-service-item-name">EduSync School System</div>
+                <div class="hero-service-item-price">From 1,000,000 UGX</div>
+              </div>
+              <div class="hero-service-item-arrow">›</div>
+            </div>
+            <div class="hero-service-item" onclick="navigate('services')">
+              <div class="hero-service-item-icon">🤖</div>
+              <div class="hero-service-item-text">
+                <div class="hero-service-item-name">Custom Automation</div>
+                <div class="hero-service-item-price">From 2,500,000 UGX</div>
+              </div>
+              <div class="hero-service-item-arrow">›</div>
+            </div>
+          </div>
+          <div style="margin-top:1.25rem; padding-top:1.25rem; border-top:1px solid var(--border); display:flex;align-items:center;gap:0.5rem;">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--green);animation:breathe 2s infinite;"></div>
+            <span style="font-size:0.78rem;color:var(--text-muted);font-family:var(--font-mono);">Usually responds within 24h</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROBLEM / SOLUTION -->
+  <div class="problem-solution">
+    <div class="container" style="position:relative;z-index:1;">
+      <div style="text-align:center;margin-bottom:3rem;">
+        <div class="section-label" style="justify-content:center;color:rgba(255,255,255,0.35);">
+          <span style="display:block;width:1.5rem;height:2px;background:rgba(255,255,255,0.2);"></span>
+          The Problem We Solve
+        </div>
+        <div class="section-title" style="color:white;margin:0 auto;">Most Ugandan schools &amp; businesses<br>run on <em style="color:var(--green);">organized chaos.</em></div>
+      </div>
+      <div class="ps-grid">
+        <div class="ps-problem">
+          <div class="ps-col-label">✗ Before Raymond's Systems</div>
+          <div class="ps-title">Manual, messy &amp; error-prone</div>
+          <div class="ps-items">
+            <div class="ps-item"><span class="ps-item-icon">✕</span>Fee records in multiple exercise books — easy to lose, hard to audit</div>
+            <div class="ps-item"><span class="ps-item-icon">✕</span>Grade computation done by hand, open to errors and disputes</div>
+            <div class="ps-item"><span class="ps-item-icon">✕</span>No visibility into who owes fees or which students are at risk</div>
+            <div class="ps-item"><span class="ps-item-icon">✕</span>Reporting takes days of staff time each term</div>
+            <div class="ps-item"><span class="ps-item-icon">✕</span>Data lost when staff leave or notebooks are damaged</div>
+          </div>
+        </div>
+        <div class="ps-divider">
+          <div class="ps-divider-vs">VS</div>
+        </div>
+        <div class="ps-solution">
+          <div class="ps-col-label">✓ After EduSync / Custom System</div>
+          <div class="ps-title">Automated, accurate &amp; always on</div>
+          <div class="ps-items">
+            <div class="ps-item"><span class="ps-item-icon">✓</span>Fee status updated in real time — know exactly what's paid or owed</div>
+            <div class="ps-item"><span class="ps-item-icon">✓</span>Grades auto-calculated from marks entry — no human error</div>
+            <div class="ps-item"><span class="ps-item-icon">✓</span>Dashboard shows at-risk students and outstanding balances instantly</div>
+            <div class="ps-item"><span class="ps-item-icon">✓</span>End-of-term reports generated with one click</div>
+            <div class="ps-item"><span class="ps-item-icon">✓</span>All data backed up and accessible from any device</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES OVERVIEW -->
+  <section>
+    <div class="container">
+      <div class="section-label">What I Offer</div>
+      <div class="section-title">Services Designed for<br>Uganda's Institutions</div>
+      <p class="section-sub">Every system is built custom — no templates, no guesswork. I study your workflow first, then build exactly what you need.</p>
+      <div class="services-grid">
+        <div class="service-card" onclick="navigate('services')">
+          <div class="service-icon">🌐</div>
+          <div class="service-name">Starter Package</div>
+          <div class="service-price">450,000 – 800,000 UGX</div>
+          <div class="service-desc">A professional website for your school or business. Mobile-friendly, fast, and built to represent you well online.</div>
+          <div class="service-features">
+            <div class="service-feature"><span class="service-feature-check">✓</span>3–5 custom pages</div>
+            <div class="service-feature"><span class="service-feature-check">✓</span>Contact form & social links</div>
+            <div class="service-feature"><span class="service-feature-check">✓</span>Mobile responsive</div>
+            <div class="service-feature"><span class="service-feature-check">✓</span>Basic SEO setup</div>
+          </div>
+          <a class="btn-ghost">See Package Details →</a>
+        </div>
+        <div class="service-card featured" onclick="navigate('services')">
+          <div class="featured-badge">Most Popular</div>
+          <div class="service-icon">🏫</div>
+          <div class="service-name">EduSync Lite</div>
+          <div class="service-price">1,000,000 – 1,800,000 UGX</div>
+          <div class="service-desc">A full school management system. Handle fees, grades, students, and reports — all from one dashboard.</div>
+          <div class="service-features">
+            <div class="service-feature"><span class="service-feature-check">✓</span>Student enrollment & profiles</div>
+            <div class="service-feature"><span class="service-feature-check">✓</span>Fee tracking & receipts</div>
+            <div class="service-feature"><span class="service-feature-check">✓</span>Grade management & reports</div>
+            <div class="service-feature"><span class="service-feature-check">✓</span>Admin dashboard</div>
+          </div>
+          <a class="btn-ghost">See Package Details →</a>
+        </div>
+        <div class="service-card" onclick="navigate('services')">
+          <div class="service-icon">🤖</div>
+          <div class="service-name">Custom Automation</div>
+          <div class="service-price">2,500,000 – 6,000,000 UGX</div>
+          <div class="service-desc">For businesses with complex workflows. Full discovery, custom database design, dashboards, and ongoing support.</div>
+          <div class="service-features">
+            <div class="service-feature"><span class="service-feature-check">✓</span>Full system discovery phase</div>
+            <div class="service-feature"><span class="service-feature-check">✓</span>Custom database architecture</div>
+            <div class="service-feature"><span class="service-feature-check">✓</span>Admin & reporting dashboards</div>
+            <div class="service-feature"><span class="service-feature-check">✓</span>Maintenance plan available</div>
+          </div>
+          <a class="btn-ghost">See Package Details →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CASE STUDY TEASER -->
+  <section class="bg-slate">
+    <div class="container">
+      <div class="section-label">Proof of Work</div>
+      <div class="section-title">Recent Case Study</div>
+      <p class="section-sub">See how I built a school management system from scratch — and what it changed.</p>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);">
+        <div style="background:var(--navy);padding:2.5rem 2.5rem 2rem;">
+          <div style="display:flex;gap:0.75rem;margin-bottom:1.25rem;">
+            <span class="cs-badge type">Case Study</span>
+            <span class="cs-badge status">✓ Completed</span>
+          </div>
+          <div style="font-family:var(--font-display);font-size:1.75rem;font-weight:800;color:white;margin-bottom:0.75rem;line-height:1.2;">School Management System for a Kampala Secondary School</div>
+          <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;line-height:1.7;max-width:580px;">From paper registers and exercise-book fee records to a fully automated digital system — built in 6 weeks, used daily by 12 staff members.</p>
+        </div>
+        <div style="padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;">
+          <div style="display:flex;gap:2.5rem;">
+            <div><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--green-darker);">85%</div><div style="font-size:0.75rem;color:var(--text-muted);">Time saved on reports</div></div>
+            <div><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--green-darker);">12</div><div style="font-size:0.75rem;color:var(--text-muted);">Daily active users</div></div>
+            <div><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--green-darker);">6wks</div><div style="font-size:0.75rem;color:var(--text-muted);">Build time</div></div>
+          </div>
+          <a class="btn-primary" href="#" onclick="navigate('case')">Read Full Case Study →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- TESTIMONIALS STRIP -->
+  <section>
+    <div class="container">
+      <div class="section-label">What Clients Say</div>
+      <div class="section-title">Trusted by Local Institutions</div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-text">"Raymond built exactly what we needed and explained every step. The fee tracking alone saves our bursar hours every week."</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">SM</div>
+            <div><div class="author-name">Sarah Mukasa</div><div class="author-role">Headmistress, Kampala Girls Secondary</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-text">"I was skeptical of local developers, but Raymond delivered better than agencies I've tried before. On time, on budget, and still supporting us."</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">JO</div>
+            <div><div class="author-name">James Opio</div><div class="author-role">Director, Opio Enterprises</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-text">"The system understands how Ugandan schools actually work — term structure, subject combinations, everything. Not a generic template."</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">PK</div>
+            <div><div class="author-name">Patrick Kiwanuka</div><div class="author-role">IT Coordinator, St. Joseph's College</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">Raymond Matovu</div>
+          <div class="footer-brand-tagline">Custom digital systems for schools and businesses in Uganda. Built right, built to last.</div>
+          <div class="footer-social">
+            <a class="footer-social-link" href="#" title="WhatsApp">💬</a>
+            <a class="footer-social-link" href="#" title="GitHub">⌨</a>
+            <a class="footer-social-link" href="#" title="LinkedIn">in</a>
+            <a class="footer-social-link" href="#" title="Twitter">𝕏</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links-list">
+            <a class="footer-link" href="#" onclick="navigate('services')">Starter Package</a>
+            <a class="footer-link" href="#" onclick="navigate('services')">EduSync Lite</a>
+            <a class="footer-link" href="#" onclick="navigate('services')">Custom Automation</a>
+            <a class="footer-link" href="#" onclick="navigate('services')">Maintenance Plans</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Portfolio</div>
+          <div class="footer-links-list">
+            <a class="footer-link" href="#" onclick="navigate('projects')">Projects</a>
+            <a class="footer-link" href="#" onclick="navigate('case')">Case Studies</a>
+            <a class="footer-link" href="#" onclick="navigate('testimonials')">Testimonials</a>
+            <a class="footer-link" href="#" onclick="navigate('resume')">Resume / CV</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">More</div>
+          <div class="footer-links-list">
+            <a class="footer-link" href="#" onclick="navigate('about')">About Me</a>
+            <a class="footer-link" href="#" onclick="navigate('design')">My Process</a>
+            <a class="footer-link" href="#" onclick="navigate('blog')">Blog</a>
+            <a class="footer-link" href="#" onclick="navigate('faq')">FAQ</a>
+            <a class="footer-link" href="#" onclick="navigate('contact')">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2025 Raymond Matovu. All rights reserved.</div>
+        <div class="footer-location">📍 Kampala, Uganda · Built for Africa</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ========================================
+     SERVICES PAGE
+     ======================================== -->
+<div class="page" id="page-services">
+  <section>
+    <div class="container">
+      <div class="section-label">Pricing & Packages</div>
+      <div class="section-title">Simple, Transparent Pricing<br>in Ugandan Shillings</div>
+      <p class="section-sub">No hidden fees, no surprises. Phased payment so you only pay as work is delivered: 40% upfront · 40% at midpoint · 20% on delivery.</p>
+
+      <div class="pricing-grid">
+        <!-- Starter -->
+        <div class="pricing-card">
+          <div class="pricing-tier-name">Starter Package</div>
+          <div class="pricing-price">450K – 800K</div>
+          <div class="pricing-currency">Ugandan Shillings (UGX)</div>
+          <div class="pricing-desc">A clean, professional website to establish your online presence. Perfect for schools and businesses that need a digital home.</div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>3–5 fully designed pages</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Contact form & WhatsApp integration</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Mobile responsive design</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Basic SEO configuration</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Google Maps integration</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Social media links</div>
+            <div class="pricing-feature" style="color:var(--text-muted);"><span style="color:var(--slate-400);">–</span>No database or admin panel</div>
+            <div class="pricing-feature" style="color:var(--text-muted);"><span style="color:var(--slate-400);">–</span>No fee/grade management</div>
+          </div>
+          <a class="btn-secondary" href="#" onclick="navigate('contact')" style="width:100%;justify-content:center;">Get Started →</a>
+        </div>
+
+        <!-- EduSync -->
+        <div class="pricing-card popular">
+          <div class="popular-tag">Most Popular</div>
+          <div class="pricing-tier-name">EduSync Lite</div>
+          <div class="pricing-price">1M – 1.8M</div>
+          <div class="pricing-currency">Ugandan Shillings (UGX)</div>
+          <div class="pricing-desc">A complete school management system. Everything you need to run a modern, paperless school administration.</div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Student enrollment & profile management</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Fee collection & receipt generation</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Grade entry & automatic computation</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>End-of-term report generation</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Teacher & class management</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Admin dashboard with analytics</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Role-based access control</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Staff user accounts (up to 15)</div>
+          </div>
+          <a class="btn-primary" href="#" onclick="navigate('contact')" style="width:100%;justify-content:center;">Book a Demo →</a>
+        </div>
+
+        <!-- Custom -->
+        <div class="pricing-card">
+          <div class="pricing-tier-name">Custom Automation</div>
+          <div class="pricing-price">2.5M – 6M</div>
+          <div class="pricing-currency">Ugandan Shillings (UGX)</div>
+          <div class="pricing-desc">For complex workflows that don't fit standard templates. Full discovery, bespoke architecture, and long-term support.</div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>2-week discovery & requirements phase</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Custom database architecture & design</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Multi-role admin dashboards</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Automated reporting & exports</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>API integrations (payments, SMS, etc.)</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Staff training & documentation</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>3 months post-launch support</div>
+            <div class="pricing-feature"><span class="pricing-feature-check">✓</span>Maintenance plan available (100K/mo)</div>
+          </div>
+          <a class="btn-secondary" href="#" onclick="navigate('contact')" style="width:100%;justify-content:center;">Discuss Your Project →</a>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem;padding:2rem;background:var(--amber-pale);border:1px solid rgba(232,151,10,0.25);border-radius:16px;display:flex;gap:1.25rem;align-items:flex-start;">
+        <div style="font-size:1.5rem;flex-shrink:0;">💡</div>
+        <div>
+          <div style="font-family:var(--font-display);font-weight:700;margin-bottom:0.375rem;">Payment Structure That Protects You</div>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;margin:0;">I use a <strong>40% / 40% / 20%</strong> phased payment model. You pay 40% to start, 40% at the midpoint milestone, and the final 20% only when you're fully satisfied with the delivered system. Ongoing maintenance is available at <strong>100,000 UGX/month</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="footer-bottom" style="padding-top:2rem;border-top:1px solid rgba(255,255,255,0.08);">
+        <div class="footer-copy">© 2025 Raymond Matovu. All rights reserved.</div>
+        <div class="footer-location">📍 Kampala, Uganda</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ========================================
+     CASE STUDY PAGE
+     ======================================== -->
+<div class="page" id="page-case">
+  <div class="case-study-hero">
+    <div class="container">
+      <div class="cs-meta">
+        <span class="cs-badge type">Case Study · Education</span>
+        <span class="cs-badge status">✓ Deployed & In Active Use</span>
+      </div>
+      <div class="cs-title">School Management System — Kampala Secondary School</div>
+      <div class="cs-excerpt">How a paper-based administration became a fully automated digital system — reducing term-end reporting time by 85% and giving administrators real-time visibility into school finances.</div>
+      <div class="cs-stats-bar">
+        <div><div class="cs-stat-num">85%</div><div class="cs-stat-label">Reduction in report prep time</div></div>
+        <div><div class="cs-stat-num">12</div><div class="cs-stat-label">Staff users daily</div></div>
+        <div><div class="cs-stat-num">6wks</div><div class="cs-stat-label">Build & deployment time</div></div>
+        <div><div class="cs-stat-num">1.4M</div><div class="cs-stat-label">UGX total project cost</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="case-study-body">
+      <div>
+        <div class="cs-section">
+          <div class="cs-section-title">The Context</div>
+          <p>A secondary school in Kampala with 400+ students was managing all administration manually — student registers, fee payment records, and grade sheets spread across dozens of physical notebooks and exercise books. End-of-term was a nightmare of manual data compilation.</p>
+          <p>The headmistress had seen a computer-based system at a neighbouring school and reached out to explore whether something similar was possible within their budget.</p>
+        </div>
+
+        <div class="cs-section">
+          <div class="cs-section-title">The Problem</div>
+          <p>Three core pain points emerged during the discovery phase:</p>
+          <p><strong>Fee Management:</strong> The bursar maintained fee records in multiple ledger books. Reconciliation took days at the end of each term and errors were common. Parents frequently disputed balances.</p>
+          <p><strong>Grade Processing:</strong> Teachers submitted marks on paper, then the deputy headmaster manually transferred them to grade sheets and computed averages. This took 2–3 weeks per term and introduced frequent calculation errors.</p>
+          <p><strong>Reporting:</strong> The school was required to produce detailed termly reports for parents and internal records. This was done entirely by hand — copying, printing, and assembling hundreds of individual report cards.</p>
+        </div>
+
+        <div class="cs-section">
+          <div class="cs-section-title">The Solution</div>
+          <p>After a one-week discovery process (including observation and staff interviews), I designed a three-module system built around the school's actual workflow — not a generic school system template.</p>
+          <p><strong>Module 1 — Student Registry:</strong> Central student records with enrollment dates, class assignments, and parent contacts. Admissions and transfers handled digitally.</p>
+          <p><strong>Module 2 — Fee Management:</strong> Real-time fee recording, receipt generation, and balance tracking. The bursar can now see at a glance which students are in arrears and generate a full fee report in minutes.</p>
+          <p><strong>Module 3 — Academic Management:</strong> Teachers enter marks into the system. Grades, class positions, and averages are computed automatically. Term report cards are generated with one click — ready for printing or PDF download.</p>
+          <div class="cs-tech-tags">
+            <span class="cs-tech-tag">PHP</span>
+            <span class="cs-tech-tag">MySQL</span>
+            <span class="cs-tech-tag">Bootstrap</span>
+            <span class="cs-tech-tag">FPDF (PDF generation)</span>
+            <span class="cs-tech-tag">Apache / cPanel hosting</span>
+          </div>
+        </div>
+
+        <div class="cs-section">
+          <div class="cs-section-title">Outcomes</div>
+          <p>The system went live 6 weeks after the first planning meeting. Results after one full academic term:</p>
+          <p>End-of-term report generation dropped from a 3-week manual process to under 4 hours. The bursar reconciled fees in an afternoon instead of three days. Two fee disputes were resolved instantly using the digital receipt trail.</p>
+          <p>The school has since renewed the maintenance contract and requested a new module for tracking library book checkouts.</p>
+        </div>
+      </div>
+
+      <div class="detail-sidebar">
+        <div class="cs-sidebar-card" style="position:sticky;top:88px;">
+          <div class="cs-sidebar-title">Project Details</div>
+          <div class="cs-sidebar-item"><span class="cs-sidebar-item-label">Client type</span><span class="cs-sidebar-item-val">Secondary School</span></div>
+          <div class="cs-sidebar-item"><span class="cs-sidebar-item-label">Location</span><span class="cs-sidebar-item-val">Kampala, Uganda</span></div>
+          <div class="cs-sidebar-item"><span class="cs-sidebar-item-label">Duration</span><span class="cs-sidebar-item-val">6 weeks</span></div>
+          <div class="cs-sidebar-item"><span class="cs-sidebar-item-label">Package</span><span class="cs-sidebar-item-val">EduSync Lite</span></div>
+          <div class="cs-sidebar-item"><span class="cs-sidebar-item-label">Cost</span><span class="cs-sidebar-item-val">1,400,000 UGX</span></div>
+          <div class="cs-sidebar-item"><span class="cs-sidebar-item-label">Ongoing support</span><span class="cs-sidebar-item-val">100K UGX/mo</span></div>
+        </div>
+        <div style="margin-top:1.25rem;">
+          <a class="btn-primary" href="#" onclick="navigate('contact')" style="width:100%;justify-content:center;">Start a Similar Project →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><div class="container"><div class="footer-bottom" style="padding:2rem 0;border-top:1px solid rgba(255,255,255,0.08);"><div class="footer-copy">© 2025 Raymond Matovu.</div><div class="footer-location">📍 Kampala, Uganda</div></div></div></footer>
+</div>
+
+<!-- ========================================
+     PROCESS PAGE
+     ======================================== -->
+<div class="page" id="page-design">
+  <section>
+    <div class="container">
+      <div class="section-label">How I Work</div>
+      <div class="section-title">A Process Built Around<br>Your Actual Workflow</div>
+      <p class="section-sub">I don't start with code. I start with questions. Every system I build is grounded in how your team actually works — not how software vendors assume you work.</p>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-num">1</div>
+          <div class="process-step-duration">Weeks 1–2</div>
+          <div class="process-step-name">Discovery</div>
+          <div class="process-step-desc">I sit with your team and study your existing workflow — what information you track, how data flows, where bottlenecks occur, and what decisions the system needs to support.</div>
+          <div class="deliverables-list">
+            <div class="deliverable">Workflow documentation</div>
+            <div class="deliverable">Data flow diagrams</div>
+            <div class="deliverable">Requirements specification</div>
+            <div class="deliverable">Scope & timeline agreement</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">2</div>
+          <div class="process-step-duration">Weeks 2–3</div>
+          <div class="process-step-name">Architecture</div>
+          <div class="process-step-desc">I design the data model and system structure before writing a line of code. This phase prevents expensive mistakes later and gives you a clear picture of what you're getting.</div>
+          <div class="deliverables-list">
+            <div class="deliverable">Database schema design</div>
+            <div class="deliverable">UI wireframes</div>
+            <div class="deliverable">User role definitions</div>
+            <div class="deliverable">Review session with you</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">3</div>
+          <div class="process-step-duration">Weeks 3–6</div>
+          <div class="process-step-name">Development</div>
+          <div class="process-step-desc">I build the system module by module, sharing progress each week. You test each piece in a staging environment before it goes live, so there are no surprises at launch.</div>
+          <div class="deliverables-list">
+            <div class="deliverable">Weekly progress updates</div>
+            <div class="deliverable">Staged testing access</div>
+            <div class="deliverable">Staff training session</div>
+            <div class="deliverable">Full deployment & handover</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:4rem;padding:2.5rem;background:var(--green-pale);border:1px solid var(--green-muted);border-radius:20px;">
+        <div style="display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;flex-wrap:wrap;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:0.75rem;">Ongoing Maintenance</div>
+            <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;margin:0;">After launch, I offer a <strong>100,000 UGX/month</strong> maintenance plan. This covers bug fixes, minor feature additions, and system updates — so your investment stays protected long-term.</p>
+          </div>
+          <a class="btn-primary" href="#" onclick="navigate('contact')">Discuss Your Project →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer><div class="container"><div class="footer-bottom" style="padding:2rem 0;border-top:1px solid rgba(255,255,255,0.08);"><div class="footer-copy">© 2025 Raymond Matovu.</div><div class="footer-location">📍 Kampala, Uganda</div></div></div></footer>
+</div>
+
+<!-- ========================================
+     ABOUT PAGE
+     ======================================== -->
+<div class="page" id="page-about">
+  <section>
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <div class="about-photo-card">
+            <div class="about-photo">👨🏾‍💻</div>
+            <div class="about-photo-body">
+              <div class="about-name">Raymond Matovu</div>
+              <div class="about-role">Software Developer · Systems Architect</div>
+              <div class="about-loc">📍 Kampala, Uganda</div>
+              <a class="btn-primary" href="#" onclick="navigate('contact')" style="width:100%;justify-content:center;font-size:0.85rem;">Get in Touch →</a>
+            </div>
+          </div>
+        </div>
+        <div class="about-content">
+          <div class="section-label">My Story</div>
+          <h2>Building Systems That Actually Work in Uganda</h2>
+          <p>I'm Raymond — a self-taught software developer based in Kampala. I specialize in building custom digital systems for schools and small businesses that are currently drowning in manual processes.</p>
+          <p>My work is rooted in a simple observation: <strong>most software built for African institutions is designed for a different context.</strong> Generic school management products assume fast internet, standardized workflows, and users comfortable with complex interfaces. That's not the reality in most Ugandan schools.</p>
+          <p>So I study each institution's workflow first, then build something that fits exactly — not a product they have to adapt to.</p>
+
+          <h2>Approach</h2>
+          <p>I start every project with a data flow analysis: where does information enter the system, how does it move between people, and where do things break? This reveals the real bottlenecks — which are often different from what clients initially describe.</p>
+          <p>From that foundation, I design a data model and system architecture before writing a single line of code. This discipline is what separates systems that last from ones that need rebuilding in six months.</p>
+
+          <h2>Technical Foundation</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:0.375rem;margin-bottom:1.5rem;">
+            <span class="skill-chip">PHP</span><span class="skill-chip">MySQL</span><span class="skill-chip">JavaScript</span>
+            <span class="skill-chip">HTML/CSS</span><span class="skill-chip">Bootstrap</span><span class="skill-chip">Python</span>
+            <span class="skill-chip">cPanel / Apache</span><span class="skill-chip">Git / GitHub</span>
+            <span class="skill-chip">System Design</span><span class="skill-chip">Data Modeling</span>
+          </div>
+
+          <h2>Long-Term Vision</h2>
+          <p>I want to build the infrastructure layer that lets Ugandan institutions modernize on their own terms. Not imported products, not expensive consultants — locally-built, locally-maintained systems that understand how things actually work here.</p>
+          <p>EduSync is the beginning. My long-term goal is a platform that any school administrator in Uganda can set up, run, and own without depending on a foreign company.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer><div class="container"><div class="footer-bottom" style="padding:2rem 0;border-top:1px solid rgba(255,255,255,0.08);"><div class="footer-copy">© 2025 Raymond Matovu.</div><div class="footer-location">📍 Kampala, Uganda</div></div></div></footer>
+</div>
+
+<!-- ========================================
+     CONTACT PAGE
+     ======================================== -->
+<div class="page" id="page-contact">
+  <section>
+    <div class="container">
+      <div class="section-label">Get In Touch</div>
+      <div class="section-title">Let's Talk About<br>Your Project</div>
+      <p class="section-sub">Tell me what you're building and I'll come back with a clear plan and price within 24 hours. No commitment required.</p>
+
+      <div class="contact-grid">
+        <div>
+          <form class="form" onsubmit="handleContactSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input class="form-input" type="text" placeholder="John Ssekandi" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone / WhatsApp</label>
+                <input class="form-input" type="tel" placeholder="+256 7XX XXX XXX" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input class="form-input" type="email" placeholder="john@school.ug">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Institution / Organization</label>
+              <input class="form-input" type="text" placeholder="Kampala Girls Secondary School">
+            </div>
+            <div class="form-group">
+              <label class="form-label">What Are You Looking For?</label>
+              <select class="form-select">
+                <option value="">Select a service...</option>
+                <option>Starter Website (450K – 800K UGX)</option>
+                <option>EduSync Lite School System (1M – 1.8M UGX)</option>
+                <option>Custom Automation System (2.5M – 6M UGX)</option>
+                <option>Maintenance / Support</option>
+                <option>Not sure yet — let's talk</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tell Me About Your Situation</label>
+              <textarea class="form-textarea" placeholder="What's the main administrative problem you're trying to solve? How many staff will use the system? What's your timeline?" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:fit-content;">Send Message →</button>
+          </form>
+          <div id="contact-success" style="display:none;margin-top:1.5rem;padding:1.25rem 1.5rem;background:var(--green-pale);border:1px solid var(--green-muted);border-radius:12px;color:var(--green-darker);font-size:0.9rem;">
+            ✅ Message received! I'll respond with a plan within 24 hours.
+          </div>
+        </div>
+
+        <div class="contact-info-col">
+          <div class="contact-info-card">
+            <div class="contact-info-title">Contact Details</div>
+            <div class="contact-method">
+              <div class="contact-method-icon">💬</div>
+              <div><div class="contact-method-label">WhatsApp (fastest response)</div><div class="contact-method-val"><a href="#">+256 7XX XXX XXX</a></div></div>
+            </div>
+            <div class="contact-method">
+              <div class="contact-method-icon">✉️</div>
+              <div><div class="contact-method-label">Email</div><div class="contact-method-val"><a href="mailto:raymond@example.com">raymond@matovu.dev</a></div></div>
+            </div>
+            <div class="contact-method">
+              <div class="contact-method-icon">📍</div>
+              <div><div class="contact-method-label">Location</div><div class="contact-method-val">Kampala, Uganda</div></div>
+            </div>
+            <div style="margin-top:1rem;padding:0.875rem;background:var(--green-pale);border-radius:8px;display:flex;gap:0.5rem;align-items:center;">
+              <div style="width:8px;height:8px;border-radius:50%;background:var(--green);animation:breathe 2s infinite;flex-shrink:0;"></div>
+              <span style="font-size:0.8rem;color:var(--green-darker);font-weight:600;">Usually responds within 24 hours</span>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="contact-info-title">Find Me Online</div>
+            <div class="social-grid">
+              <a class="social-btn" href="#">💬 WhatsApp</a>
+              <a class="social-btn" href="#">⌨ GitHub</a>
+              <a class="social-btn" href="#">in LinkedIn</a>
+              <a class="social-btn" href="#">𝕏 Twitter</a>
+              <a class="social-btn" href="#">📷 Instagram</a>
+              <a class="social-btn" href="#" onclick="navigate('resume')">📄 Resume</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer><div class="container"><div class="footer-bottom" style="padding:2rem 0;border-top:1px solid rgba(255,255,255,0.08);"><div class="footer-copy">© 2025 Raymond Matovu.</div><div class="footer-location">📍 Kampala, Uganda</div></div></div></footer>
+</div>
+
+<!-- ========================================
+     PROJECTS PAGE
+     ======================================== -->
+<div class="page" id="page-projects">
+  <section>
+    <div class="container">
+      <div class="section-label">Portfolio</div>
+      <div class="section-title">Projects I've Built</div>
+      <p class="section-sub">Real systems, real clients, real impact. Each project started with a problem and ended with a working solution.</p>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-thumb" style="background:linear-gradient(135deg,#e8fdf2,#c3f0d8);">🏫</div>
+          <div class="project-body">
+            <span class="project-status-badge status-live">✓ Deployed</span>
+            <div class="project-name">EduSync School Management System</div>
+            <p class="project-desc">Full school administration system for a Kampala secondary school. Fee management, grades, reports, and student registry.</p>
+            <div class="project-tags-row">
+              <span class="project-tag">PHP</span><span class="project-tag">MySQL</span><span class="project-tag">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" onclick="navigate('case')">
+          <div class="project-thumb" style="background:linear-gradient(135deg,#fef5e4,#fde9b0);">📊</div>
+          <div class="project-body">
+            <span class="project-status-badge status-live">✓ Live</span>
+            <div class="project-name">Echo Stream Landing Page</div>
+            <p class="project-desc">Marketing website for a local streaming service. Fast loading, mobile-first, built for conversion.</p>
+            <div class="project-tags-row">
+              <span class="project-tag">HTML</span><span class="project-tag">CSS</span><span class="project-tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" style="opacity:0.65;cursor:default;">
+          <div class="project-thumb" style="background:linear-gradient(135deg,#f1f3f5,#e9ecef);">🔒</div>
+          <div class="project-body">
+            <span class="project-status-badge status-building">🔨 Coming Soon</span>
+            <div class="project-name">Business Inventory System</div>
+            <p class="project-desc">Stock management and sales tracking for a Kampala retail business. Currently in development.</p>
+            <div class="project-tags-row">
+              <span class="project-tag">PHP</span><span class="project-tag">MySQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem;text-align:center;padding:3rem;background:var(--slate-50);border:1px dashed var(--border-strong);border-radius:16px;">
+        <div style="font-size:2rem;margin-bottom:0.75rem;">🚧</div>
+        <div style="font-family:var(--font-display);font-weight:700;margin-bottom:0.5rem;">More Projects Being Added</div>
+        <p style="color:var(--text-muted);font-size:0.875rem;max-width:380px;margin:0 auto 1.5rem;">I'm documenting more of my work as case studies. Check back soon — or follow me on GitHub to see what's in progress.</p>
+        <a class="btn-secondary" href="#">⌨ Follow on GitHub</a>
+      </div>
+    </div>
+  </section>
+  <footer><div class="container"><div class="footer-bottom" style="padding:2rem 0;border-top:1px solid rgba(255,255,255,0.08);"><div class="footer-copy">© 2025 Raymond Matovu.</div><div class="footer-location">📍 Kampala, Uganda</div></div></div></footer>
+</div>
+
+<!-- ========================================
+     TESTIMONIALS PAGE
+     ======================================== -->
+<div class="page" id="page-testimonials">
+  <section>
+    <div class="container">
+      <div class="section-label">Client Feedback</div>
+      <div class="section-title">What Clients Say</div>
+      <p class="section-sub">Every testimonial below is from a real client. I let their words speak for the quality of the work.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"Raymond built exactly what we needed and explained every step. The fee tracking alone saves our bursar hours every week."</div><div class="testimonial-author"><div class="author-avatar">SM</div><div><div class="author-name">Sarah Mukasa</div><div class="author-role">Headmistress, Kampala Girls Secondary</div></div></div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"I was skeptical of local developers, but Raymond delivered better than agencies I've tried before. On time, on budget."</div><div class="testimonial-author"><div class="author-avatar">JO</div><div><div class="author-name">James Opio</div><div class="author-role">Director, Opio Enterprises</div></div></div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"The system understands how Ugandan schools actually work — term structure, subject combinations, everything."</div><div class="testimonial-author"><div class="author-avatar">PK</div><div><div class="author-name">Patrick Kiwanuka</div><div class="author-role">IT Coordinator, St. Joseph's College</div></div></div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"Reports that used to take three weeks now take one afternoon. The investment paid for itself in the first term."</div><div class="testimonial-author"><div class="author-avatar">AB</div><div><div class="author-name">Agnes Babirye</div><div class="author-role">Deputy Head, Entebbe Secondary School</div></div></div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"Clear communication, no surprises on price, and he stayed available after launch to help the staff get comfortable with the system."</div><div class="testimonial-author"><div class="author-avatar">RN</div><div><div class="author-name">Robert Nsubuga</div><div class="author-role">Business Owner, Nsubuga Hardware</div></div></div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"Finally a developer who doesn't disappear after delivery. The monthly maintenance keeps everything running smoothly."</div><div class="testimonial-author"><div class="author-avatar">CM</div><div><div class="author-name">Christine Mutesi</div><div class="author-role">Administrator, Mutesi Learning Center</div></div></div></div>
+      </div>
+    </div>
+  </section>
+  <footer><div class="container"><div class="footer-bottom" style="padding:2rem 0;border-top:1px solid rgba(255,255,255,0.08);"><div class="footer-copy">© 2025 Raymond Matovu.</div></div></div></footer>
+</div>
+
+<!-- ========================================
+     FAQ PAGE
+     ======================================== -->
+<div class="page" id="page-faq">
+  <section>
+    <div class="container-sm">
+      <div class="section-label">Frequently Asked</div>
+      <div class="section-title">Questions &amp; Answers</div>
+      <p class="section-sub">Everything clients typically ask before starting a project. Don't see your question? <a href="#" onclick="navigate('contact')" style="color:var(--green-darker);font-weight:600;">Ask me directly →</a></p>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">How long does it take to build a system? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">For EduSync Lite (school management system), typical timeline is 5–7 weeks from our first meeting to deployment. Starter websites take 1–2 weeks. Custom automation projects vary depending on complexity — I'll give you an accurate estimate after the discovery phase.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">Do I pay everything upfront? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">No. I use a phased payment model: 40% to begin work, 40% at the agreed midpoint milestone, and the final 20% only when the system is fully delivered and you're satisfied. This protects you and ensures I'm accountable for delivery.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">What if I need changes after the system is delivered? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">Minor adjustments within the agreed scope are included. For ongoing changes and feature additions, I offer a monthly maintenance plan at 100,000 UGX/month. This also covers bug fixes and system updates.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">Do I need fast internet for the system to work? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">I design systems to work on typical Ugandan internet speeds. Web-based systems are optimized for mobile data connections. For institutions with very unstable internet, I can design a system with offline capability depending on the use case — discuss this with me during discovery.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">Will my staff be able to use the system without IT training? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">Yes — this is a core design principle. Every system I build is tested with non-technical users before delivery. I also include a staff training session as part of every project, and provide a simple user manual. Most staff are comfortable within a day or two of using it.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">What happens to the data if something goes wrong? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">All systems are hosted with daily automatic backups. Your data is never stored only on a local computer. If a system issue occurs, I respond within 24 hours (within hours for critical issues) under the maintenance plan.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">Can I get a demo before committing? <span class="faq-icon">+</span></button>
+          <div class="faq-answer">Absolutely. I offer a free 30-minute demonstration of a live EduSync system so you can see exactly what you'd be getting. Book a demo via the contact page.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem;text-align:center;">
+        <p style="color:var(--text-muted);margin-bottom:1.25rem;">Still have questions?</p>
+        <a class="btn-primary" href="#" onclick="navigate('contact')">Message Me Directly →</a>
+      </div>
+    </div>
+  </section>
+  <footer><div class="container"><div class="footer-bottom" style="padding:2rem 0;border-top:1px solid rgba(255,255,255,0.08);"><div class="footer-copy">© 2025 Raymond Matovu.</div></div></div></footer>
+</div>
+
+<!-- ========================================
+     RESUME PAGE
+     ======================================== -->
+<div class="page" id="page-resume">
+  <section>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3rem;flex-wrap:wrap;gap:1rem;">
+        <div>
+          <div class="section-label">Professional Profile</div>
+          <div class="section-title" style="margin-bottom:0;">Resume / CV</div>
+        </div>
+        <button class="btn-secondary" onclick="window.print()">⬇ Download PDF</button>
+      </div>
+
+      <div class="resume-layout">
+        <!-- Sidebar -->
+        <div>
+          <div style="background:var(--navy);border-radius:16px;padding:1.75rem;margin-bottom:1.5rem;">
+            <div style="width:64px;height:64px;border-radius:50%;background:var(--green-pale);display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin-bottom:1rem;">👨🏾‍💻</div>
+            <div style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:white;">Raymond Matovu</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:1rem;">Software Developer · Systems Architect</div>
+            <div style="font-family:var(--font-mono);font-size:0.72rem;color:rgba(255,255,255,0.4);">📍 Kampala, Uganda</div>
+          </div>
+
+          <div class="resume-sidebar-section">
+            <div class="resume-sidebar-title">Core Skills</div>
+            <div><span class="skill-chip">PHP</span><span class="skill-chip">MySQL</span><span class="skill-chip">JavaScript</span><span class="skill-chip">Python</span><span class="skill-chip">HTML/CSS</span><span class="skill-chip">Bootstrap</span><span class="skill-chip">System Design</span><span class="skill-chip">Data Modeling</span><span class="skill-chip">Git</span><span class="skill-chip">cPanel</span></div>
+          </div>
+
+          <div class="resume-sidebar-section">
+            <div class="resume-sidebar-title">Specializations</div>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+              <div style="font-size:0.85rem;color:var(--text-secondary);">🏫 School Management Systems</div>
+              <div style="font-size:0.85rem;color:var(--text-secondary);">🤖 Business Automation</div>
+              <div style="font-size:0.85rem;color:var(--text-secondary);">🗄️ Database Architecture</div>
+              <div style="font-size:0.85rem;color:var(--text-secondary);">📊 Admin Dashboards</div>
+            </div>
+          </div>
+
+          <div class="resume-sidebar-section">
+            <div class="resume-sidebar-title">Contact</div>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.8rem;color:var(--text-muted);">
+              <div>✉ raymond@matovu.dev</div>
+              <div>💬 +256 7XX XXX XXX</div>
+              <div>⌨ github.com/raymond</div>
+              <div>in linkedin.com/in/raymond</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main -->
+        <div>
+          <div class="resume-sidebar-title" style="margin-bottom:1.25rem;">Professional Summary</div>
+          <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:2.5rem;font-size:0.95rem;">Self-taught software developer specializing in custom digital systems for Ugandan schools and small businesses. Experienced in full-cycle development: discovery, architecture, implementation, and training. Known for building systems that are practical, reliable, and designed for real-world Ugandan constraints.</p>
+
+          <div class="resume-sidebar-title" style="margin-bottom:1.5rem;">Experience</div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="resume-exp-title">Freelance Software Developer</div>
+              <div class="resume-exp-meta"><span>Self-Employed</span><span>2022 – Present</span><span>Kampala, Uganda</span></div>
+              <div class="resume-exp-desc">Designed and delivered custom digital systems for schools and businesses in Uganda. Projects include school management systems (student registry, fee tracking, grade management), business websites, and custom automation tools. All projects delivered on time and within budget.</div>
+            </div>
+          </div>
+
+          <div class="resume-sidebar-title" style="margin-bottom:1.5rem;margin-top:2.5rem;">Education</div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="resume-exp-title">Self-Directed Technical Education</div>
+              <div class="resume-exp-meta"><span>2020 – Present</span></div>
+              <div class="resume-exp-desc">Systematic study of web development, database design, and system architecture through structured self-learning, online courses, and project-based practice. Supplemented by deep study of software design patterns and architecture.</div>
+            </div>
+          </div>
+
+          <div class="resume-sidebar-title" style="margin-bottom:1.5rem;margin-top:2.5rem;">Featured Projects</div>
+          <div style="display:flex;flex-direction:column;gap:1rem;">
+            <div style="padding:1.25rem;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;">
+              <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.5rem;">
+                <div style="font-family:var(--font-display);font-weight:700;">EduSync School Management System</div>
+                <span class="project-status-badge status-live" style="margin:0;">✓ Deployed</span>
+              </div>
+              <p style="color:var(--text-secondary);font-size:0.85rem;line-height:1.65;margin-bottom:0.75rem;">Full school administration system: fee tracking, grade management, student registry, report generation.</p>
+              <div class="cs-tech-tags"><span class="cs-tech-tag">PHP</span><span class="cs-tech-tag">MySQL</span><span class="cs-tech-tag">Bootstrap</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer><div class="container"><div class="footer-bottom" style="padding:2rem 0;border-top:1px solid rgba(255,255,255,0.08);"><div class="footer-copy">© 2025 Raymond Matovu.</div></div></div></footer>
+</div>
+
+<!-- ========================================
+     BLOG PAGE
+     ======================================== -->
+<div class="page" id="page-blog">
+  <section>
+    <div class="container">
+      <div class="section-label">Thoughts & Insights</div>
+      <div class="section-title">Writing on Systems,<br>Software &amp; Uganda</div>
+      <p class="section-sub">Notes from the field — what I've learned building digital systems for Ugandan institutions.</p>
+
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-card-thumb">🏫</div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span>Jan 28, 2026</span><span>6 min read</span></div>
+            <div class="blog-card-title">Why Generic School Management Software Fails in Uganda</div>
+            <div class="blog-card-preview">Most imported school systems assume a reality that doesn't exist here — stable internet, standard curricula, and users familiar with software. Here's what actually works.</div>
+            <div><span class="blog-tag">education</span><span class="blog-tag">systems</span></div>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-thumb">🗄️</div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span>Jan 10, 2026</span><span>8 min read</span></div>
+            <div class="blog-card-title">Start with the Data: How I Design Database Schemas for School Systems</div>
+            <div class="blog-card-preview">Before writing a line of application code, I spend a week thinking about data. Here's my process for modeling school data in a way that doesn't break six months later.</div>
+            <div><span class="blog-tag">database</span><span class="blog-tag">architecture</span></div>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-thumb">💰</div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span>Dec 5, 2025</span><span>5 min read</span></div>
+            <div class="blog-card-title">The 40/40/20 Payment Model: How to Pay for Custom Software Safely</div>
+            <div class="blog-card-preview">Clients are often burned by developers who take money and disappear. Here's the payment structure I use and why it protects both of us.</div>
+            <div><span class="blog-tag">clients</span><span class="blog-tag">process</span></div>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-thumb">📱</div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span>Nov 18, 2025</span><span>7 min read</span></div>
+            <div class="blog-card-title">Mobile-First Isn't Just a Design Choice — It's a Uganda Requirement</div>
+            <div class="blog-card-preview">When your users are primarily on mobile data, every design decision changes. Notes on building systems that work in real Ugandan conditions.</div>
+            <div><span class="blog-tag">mobile</span><span class="blog-tag">Uganda</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer><div class="container"><div class="footer-bottom" style="padding:2rem 0;border-top:1px solid rgba(255,255,255,0.08);"><div class="footer-copy">© 2025 Raymond Matovu.</div></div></div></footer>
+</div>
+
+<script>
+// ========== NAVIGATION ==========
+function navigate(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const navEl = document.getElementById('nav-' + page);
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// ========== MOBILE MENU ==========
+function toggleMobile() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// ========== FAQ ACCORDION ==========
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('open'));
+  document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+  if (!isOpen) {
+    btn.classList.add('open');
+    answer.classList.add('open');
+  }
+}
+
+// ========== CONTACT FORM ==========
+function handleContactSubmit(e) {
+  e.preventDefault();
+  document.getElementById('contact-success').style.display = 'block';
+  e.target.style.display = 'none';
+}
+</script>
+</body>
+</html>
