@@ -37,12 +37,15 @@
     height: 2rem;
   }
 
+  .demo {width: 80%;}
+
   .logo-anchor {
     display: flex;
     text-decoration: none;
     gap: 3px;
   }
   #logo.logo-name {
+    width: 80%;
     font-size: small;
     text-wrap: nowrap;
   }
@@ -71,7 +74,10 @@
   }
 
   .intro-container2 {
-    max-width: 310px; 
+    max-width: 330px;
+    height: 550px;
+    margin-left: 2rem;
+    padding: 1rem 1.5rem;
   }
 
   .intro-info {
@@ -87,11 +93,33 @@
   }
 
   .stack1 {
-    max-width: 320px;
+    max-width: 330px;
     padding: 20px;
-    height: 400px;
+    line-height: 2;
+    height: 550px;
     background-color: #fdfdfd;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .card1 {height: 550px;}
+  .card1-pro {height: 550px;}
+
+  #what-i-do {
+    max-width: auto;
+    text-align: center;
+    margin-left: 0;
+    padding-right: 0 1.5rem;
+  }
+
+  #what-i-do::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 0;
+    width: 0;
+    ; 
   }
 
   .card-in {
@@ -102,13 +130,19 @@
     padding: 0 1.5rem;
   }
 
+  .card-in h1 {text-align: center;}
+
   .offer-button {
-    justify-content: center;
     text-align: center;
     width: 300px;
     margin-top: 0;
     margin-left: 0;
-    margin-right: 3rem;
+  }
+
+  .carddiv {
+    align-items: flex-end;
+    padding-top: 60px;
+    margin-left: 15%;
   }
 
   .container {
@@ -119,6 +153,7 @@
 
   .cta {
     display: grid;
+    padding: 0 1.5rem;
     text-align: center;
     justify-content: center;
     align-items: center;
