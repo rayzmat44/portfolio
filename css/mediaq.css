@@ -1,13 +1,137 @@
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
 
   .body {
-    max-width: 450px;
+    align-items: center;
+    max-width: auto;
+    margin-left: 3px;
+    font-size: large;
+    margin-right: 0;
+  }
+
+  .body-projects {
+    max-width: auto;
+    margin-left: 3px;
+    font-size: medium;
+    margin-right: 0;
+  }
+
+  .hr {
+    max-width: auto;
+  }
+  #navigation {
+    display: grid;
+    width: 300px;
   }
   #navbar {
     gap: 2rem;
     margin: 0;
-    width: 100%;
+    width: 200px;
     padding: auto;
   }
-  
+
+  #logo {
+    text-align: center;
+    padding: 9px;
+    padding-top: auto;
+    margin-left: 0;
+    height: 2rem;
+  }
+
+  .logo-anchor {
+    display: flex;
+    text-decoration: none;
+    gap: 3px;
+  }
+  #logo.logo-name {
+    font-size: small;
+    text-wrap: nowrap;
+  }
+
+  #list {
+    display: none;
+  }
+
+  .demo {
+    margin-left: 100px;
+  }
+  .intro-container {
+    margin-left: 3px;
+    display: grid;
+    width: auto;
+  }
+
+  .intro-container1 {
+    margin-right: 0;
+    text-align: center;
+    max-width: auto;
+    line-height: 1;
+  }
+  .hd1 {
+    font-size: 2.5rem;
+  }
+
+  .intro-container2 {
+    max-width: 310px; 
+  }
+
+  .intro-info {
+    display: grid;
+    justify-content: center;
+  }
+
+  .tech-stack {
+    display: grid;
+    justify-content: center;
+    gap: 2rem;
+
+  }
+
+  .stack1 {
+    max-width: 320px;
+    padding: 20px;
+    height: 400px;
+    background-color: #fdfdfd;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .card-in {
+    display: grid;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+  }
+
+  .offer-button {
+    justify-content: center;
+    text-align: center;
+    width: 300px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 3rem;
+  }
+
+  .container {
+    display: grid;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .cta {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-container {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    margin-left: 4rem;
+  }
+
+  .footer-socials {
+    margin-left: 7rem;
+  }
 }
