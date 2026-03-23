@@ -3,14 +3,14 @@
   .body {
     align-items: center;
     max-width: auto;
-    margin-left: 3px;
+    margin-left: 0;
     font-size: larger;
     margin-right: 0;
   }
 
   .body-projects {
     max-width: auto;
-    margin-left: 3px;
+    margin-left: 0;
     font-size: medium;
     margin-right: 0;
   }
@@ -225,4 +225,236 @@
     padding: 0;
     line-height: 1.5;
   }
+}
+
+@media  screen and ((min-width: 480px) and (max-width: 600px)) {
+ 
+
+  .body {
+    align-items: center;
+    max-width: auto;
+    margin-left: 0;
+    font-size: larger;
+    margin-right: 0;
+  }
+
+  .body-projects {
+    max-width: auto;
+    margin-left: 0;
+    font-size: medium;
+    margin-right: 0;
+  }
+
+  .hr {max-width: auto;}
+  #navigation {
+    display: grid;
+    width: 90%;
+  }
+  #navbar {
+    margin: 0;
+    width: auto;
+    position: relative;
+    padding: auto;
+  }
+
+  #logo {
+    text-align: center;
+    padding: 9px;
+    padding-top: auto;
+    margin-left: 0;
+    height: 2rem;
+  }
+
+  .demo {
+    margin-left: 100%;
+    margin-right: 0;
+    width: 80%;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    background-color: rgb(81, 202, 81);
+    border: none;
+    border-radius: 8px;
+    border-width: 18px;
+    padding: 12px;
+    padding-left: 21px;
+    padding-right: 21px;
+    transition: all 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .demo:hover {
+    transform: translateY(0);
+    transition: all 0;
+  }
+
+  .demo1 {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(81, 202, 81);
+    border-radius: 8px;
+    border: none;
+    padding: 16px;
+    transition: all 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  }
+
+  .demo1:hover {
+    transform: translateY(0);
+    transition: all 0;
+    background-color: rgb(7, 107, 7);
+  }
+
+  .logo-anchor {
+    display: flex;
+    text-wrap: nowrap;
+    text-decoration: none;
+    gap: 0;
+  }
+  #logo.logo-name {
+    width: 50%;
+    font-size: small;
+    text-wrap: nowrap;
+  }
+
+  #list {display: none;}
+  .demo {margin-left: 100px;}
+
+  .intro-container {
+    margin-left: 3px;
+    display: grid;
+    width: auto;
+  }
+
+  .intro-container1 {
+    margin-right: 0;
+    text-align: center;
+    max-width: auto;
+    line-height: 1;
+  }
+  .hd1 {font-size: 2.5rem;}
+
+  .intro-container2 {
+    max-width: 330px;
+    height: 550px;
+    margin-left: 2.5rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .intro-info {
+    display: grid;
+    justify-content: center;
+  }
+
+  .tech-stack {
+    display: grid;
+    justify-content: center;
+    gap: 2rem;
+
+  }
+
+  .stack1 {
+    max-width: 330px;
+    padding: 20px;
+    line-height: 2;
+    height: 550px;
+    background-color: #fdfdfd;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .card1 {height: 550px;}
+  .card1-pro {height: 550px;}
+
+  #what-i-do {
+    max-width: auto;
+    text-align: center;
+    margin-left: 0;
+    padding-right: 0 1.5rem;
+  }
+
+  #what-i-do::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 0;
+    width: 0;
+    ; 
+  }
+
+  .card-in {
+    display: grid;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+  }
+
+  .card-in h1 {text-align: center;}
+
+  .offer-button {
+    text-align: center;
+    width: 300px;
+    margin-top: 0;
+    margin-left: 0;
+    transition: all 0;
+  }
+  .offer-button:hover {
+    transform: translateY(0);
+    transition: all 0;
+  }
+  .carddiv {
+    align-items: flex-end;
+    padding-top: 60px;
+    margin-left: 15%;
+  }
+
+  .container {
+    display: grid;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .cta {
+    display: grid;
+    padding: 0 1.5rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .cta-demo {margin-left: 3rem;}
+
+  .footer {
+    background-color: rgb(12, 19, 48);
+    padding: 20px;
+    color: rgb(165, 165, 165);
+    height: auto;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  .footer-container {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    margin-left: 4rem;
+  }
+
+  .footer-about {text-align: center; margin-left: 2.8rem;}
+  .footer-socials {margin-left: 5.5rem;}
+
+  .footer-links {
+    display: flex;
+    gap: 80px;
+    max-width: 600px;
+    margin-right: 60px;
+  }
+  .footer-list {
+    list-style: none;
+    padding: 0;
+    line-height: 1.5;
+  } 
+  
 }
