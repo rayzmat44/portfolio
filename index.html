@@ -6,6 +6,8 @@
     <title>Main Page</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/mediaq.css">
   </head>
   <body class="body">
     <header>
@@ -27,9 +29,25 @@
         <li class="list-hover"><a href="pages/contact.html" class="link">Contact</a></li>
         <li class="list-hover"><a href="pages/blog.html" class="link">Blog</a></li>
       </ul>
-      <a href="pages/contact.html" class="link"><button class="demo">Book a demo</button></a>
+        <div>
+          <a href="pages/contact.html" class="link"><button class="demo">Book a demo</button></a>
+          <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
        </div>
       </nav>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" onclick="navigate('home');toggleMobile()">Home</a>
+        <a href="pages/webservices.html" onclick="navigate('services');toggleMobile()">Services & Pricing</a>
+        <a href="pages/projects.html" onclick="navigate('projects');toggleMobile()">Projects</a>
+        <a href="pages/about.html" onclick="navigate('about');toggleMobile()">About Me</a>
+        <a href="pages/design.html" onclick="navigate('design');toggleMobile()">My Process</a>
+        <a href="pages/case_studies.html" onclick="navigate('case');toggleMobile()">Case Studies</a>
+        <a href="pages/blog.html" onclick="navigate('blog');toggleMobile()">Blog</a>
+        <a href="pages/faq.html" onclick="navigate('faq');toggleMobile()">FAQ</a>
+        <a href="pages/contact.html" onclick="navigate('contact');toggleMobile()">Contact</a>
+      </div>
     </header>
 
     <main>
