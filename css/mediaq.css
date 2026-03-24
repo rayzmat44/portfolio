@@ -120,7 +120,6 @@
     display: grid;
     justify-content: center;
     gap: 2rem;
-
   }
 
   .stack1 {
@@ -406,15 +405,8 @@
     margin-right: 10%;
   }
 
-  .tech-stack {
-    display: grid;
-    justify-content: center;
-    gap: 2rem;
-
-  }
-
   .stack1 {
-    max-width: 330px;
+    max-width: 450px;
     padding: 20px;
     line-height: 2;
     height: 550px;
@@ -422,9 +414,11 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   }
 
-  .card1 {height: 550px;}
-  .card1-pro {height: 550px;}
+  .card1 {height: 550px; width: 400px;}
+  .card1-pro {height: 550px; width: 400px;}
 
+  
+  
   #what-i-do {
     max-width: auto;
     text-align: center;
@@ -450,6 +444,12 @@
     align-items: center;
     padding: 0 1.5rem;
   }
+  
+  .tech-stack {
+    display: grid;
+    justify-content: center;
+    gap: 2rem;
+  }
 
   .card-in h1 {text-align: center;}
 
@@ -457,7 +457,7 @@
     text-align: center;
     width: 300px;
     margin-top: 0;
-    margin-left: 0;
+    margin-left: 2.2rem;
     transition: all 0;
   }
   .offer-button:hover {
@@ -501,12 +501,12 @@
     margin-left: 4rem;
   }
 
-  .footer-about {text-align: center; margin-left: 2.8rem;}
-  .footer-socials {margin-left: 5.5rem;}
+  .footer-about {text-align: center; margin-left: 5.5rem;}
+  .footer-socials {margin-left: 5.8rem;}
 
   .footer-links {
     display: flex;
-    gap: 80px;
+    gap: 70px;
     max-width: 600px;
     margin-right: 60px;
   }
@@ -515,5 +515,12 @@
     padding: 0;
     line-height: 1.5;
   } 
+
+  .footer-packs {
+    text-decoration: none;
+    text-wrap: nowrap;
+    text-align: left;
+    color: rgb(165, 165, 165);
+  }
   
 }
