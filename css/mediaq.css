@@ -216,7 +216,7 @@
   .footer-links {
     display: flex;
     gap: 80px;
-    max-width: 600px;
+    max-width: auto;
     margin-right: 60px;
   }
   .footer-list {
@@ -224,9 +224,103 @@
     padding: 0;
     line-height: 1.5;
   }
+
+  .serv {
+    margin-left: 2%;
+    padding: 0 1.5rem;
+    gap: 0;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .serv2 {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: rgb(68, 67, 67);
+    padding: 0;
+    line-height: 1.5;
+    margin-left: 0;
+  }
+
+  .service-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+    gap: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #fafbf8;
+  }
+
+  .service-card1 {
+    border: rgb(119, 199, 102) solid 2px;
+    box-shadow: 0 6px 12px, rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    position: relative;
+    height: 700px;
+    width: 350px;
+    margin-top: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .service-card2 {
+    border: rgb(192, 192, 192) solid 1px;
+    position: relative;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    height: 700px;
+    width: 350px;
+    margin-top: 2rem;
+  }
+
+  .service-card3 {
+    margin-top: 2rem;
+    position: relative;
+    border: rgb(192, 192, 192) solid 1px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    height: 700px;
+    width: 350px;
+  }
+  
+  
+  #payment {
+    display: grid;
+    justify-content: ceter;
+    align-items: center;
+    padding: 0 1.5rem;
+    line-height: 2;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    background-color: rgb(255, 233, 193);
+    height: auto;
+    width: 350px;
+    margin-left: 1rem;
+    gap: 0;
+    border: rgb(255, 170, 131) solid 1px;
+  }
+  .icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    margin-left: 20%;
+    max-width: auto;
+    padding: 5px;
+    border-radius: 25%;
+    text-align: center;
+  }
+
 }
 
-@media  screen and ((min-width: 480px) and (max-width: 600px)) {
+@media  screen and ((min-width: 481px) and (max-width: 600px)) {
  
 
   .body {
@@ -492,6 +586,7 @@
     height: auto;
     margin-left: 0;
     margin-bottom: 0;
+    margin-right: 0;
   }
 
   .footer-container {
@@ -506,9 +601,11 @@
 
   .footer-links {
     display: flex;
-    gap: 70px;
-    max-width: 600px;
+    gap: 60px;
+    max-width: auto;
+    padding: 10px;
     margin-right: 60px;
+    margin-left: 0;
   }
   .footer-list {
     list-style: none;
