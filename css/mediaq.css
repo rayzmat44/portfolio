@@ -254,6 +254,88 @@
     background-color: #fafbf8;
   }
 
+  .popular {
+    font-size: xx-small;
+    color: rgb(248, 248, 248);
+    font-weight: bolder;
+    margin-top: 10px;
+    border-radius: 45px;
+    padding: 6px;
+    max-width: 90px;
+    text-align: center;
+    text-wrap: nowrap;
+    font-size: smaller;
+    position: absolute;
+    top: -30px;
+    right: 35%;
+    border-color: rgb(119, 199, 102);
+    border: rgb(119, 199, 102) solid 1px;
+    background-color: rgb(111, 206, 90);
+  }
+
+  
+  .comingsoon {
+    font-size: 14px;
+    color: rgb(27, 146, 76);
+    font-weight: bold;
+    margin-top: 10px;
+    border-radius: 45px;
+    padding: 2px;
+    max-width: 100px;
+    text-align: center;
+    text-wrap: nowrap;
+    font-size: smaller;
+    position: absolute;
+    top: -24px;
+    right: 35%;
+    border-color: green;
+    border: rgb(147, 218, 147) solid 1px;
+    background-color: rgb(218, 255, 229);
+  }
+
+  .get1 {
+    justify-content: center;
+    font-weight: bold;
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    margin-left: 75px;
+    margin-top: 100px;
+    background-color: transparent;
+    border: 2px solid;
+    border-color: gray;
+  }
+
+  .get2 {
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    margin-left: 75px;
+    margin-top: 130px;
+    border: gray solid 1px;
+    background-color: rgb(81, 202, 81);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(123, 250, 134, 0.5);
+  }
+
+  .get3 {
+    justify-content: center;
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    margin-left: 75px;
+    margin-top: 130px;
+    border: 2px solid;
+    color: black;
+    font-weight: bold;
+    border-color: gray;
+    background-color: transparent;
+  }
+
+
   .service-card1 {
     border: rgb(119, 199, 102) solid 2px;
     box-shadow: 0 6px 12px, rgba(0, 0, 0, 0.3);
