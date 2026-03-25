@@ -493,6 +493,108 @@
     flex-direction: row;
     gap: 8px;
   }
+  /* Project section */
+
+  .add-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+    margin-top: 20%;
+    margin-bottom: 40%;
+    margin-left: 10px;
+    max-width: auto;
+  }
+
+  .inner-conts {
+    border-radius: 10px;
+    border: gray solid 1px;
+    border-style: dashed;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 80px;
+    padding-top: 80px;
+    text-align: center;
+    background-color: rgb(236, 236, 236);
+  }
+
+  /* Design process styles */
+
+  #process-phase {
+    display: grid;
+    justify-content: center;
+    padding: 0 1.5rem;
+    margin-top: 3rem;
+    gap: 10px;
+  }
+
+  #phase-number1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 17px;
+    color: white;
+    background-color: rgba(44, 190, 44, 0.8);
+    align-items: center;
+    margin-left: 40%;
+    text-align: center;
+    border: rgb(88, 185, 88) solid 1px;
+    height: 70px;
+    width: 70px;
+    border-radius: 60px;
+  }
+
+  #phase-number2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 17px;
+    color: white;
+    background-color: rgba(44, 190, 44, 0.8);
+    align-items: center;
+    margin-left: 40%;
+    text-align: center;
+    border: rgb(88, 185, 88) solid 1px;
+    height: 70px;
+    width: 70px;
+    border-radius: 60px;
+  }
+
+  
+  #phase-number3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 17px;
+    color: white;
+    background-color: rgba(44, 190, 44, 0.8);
+    align-items: center;
+    margin-left: 40%;
+    text-align: center;
+    border: rgb(88, 185, 88) solid 1px;
+    height: 70px;
+    width: 70px;
+    border-radius: 60px;
+  }
+
+  .phase1::after {content: '';}
+  .phase2::after {content: '';}
+  .phase3::after {content: '';}
+  .ongoing-text {line-height: 1.5;}
+  .ongoing-button {
+    margin-top: 5%;
+    margin-left: 15%;
+  }
+  .ongoing-plan {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+    border: lightblue solid 1px;
+    border-radius: 12px;
+    background-color: rgb(221, 246, 255);
+    gap: 6rem;
+  }
+
 }
 
 @media  screen and ((min-width: 481px) and (max-width: 600px)) {
