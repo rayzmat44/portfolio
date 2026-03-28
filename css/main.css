@@ -358,7 +358,7 @@
   margin-bottom: 60px;
 
 }
-
+.mobile-menu.open { display: flex; }
 .int-conts {
   margin-bottom: 40px;
 }

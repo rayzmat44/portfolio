@@ -2,16 +2,16 @@
 
   .body {
     align-items: center;
-    max-width: auto;
+    max-width: 100%;
     margin-left: 0;
-    font-size: medium;
+    font-size: small;
     margin-right: 0;
   }
 
   .body-projects {
-    max-width: auto;
+    max-width: 100%;
     margin-left: 0;
-    font-size: medium;
+    font-size: small;
     margin-right: 0;
   }
 
@@ -36,7 +36,7 @@
   }
 
   .demo {
-    width: 90%;
+    width: 80%;
     font-weight: bold;
     font-size: 14px;
     color: white;
@@ -88,7 +88,7 @@
   }
 
   #list {display: none;}
-  .demo {margin-left: 100px;}
+  .demo {margin-left: 90px;}
 
   .intro-container {
     margin-left: 3px;
@@ -112,6 +112,7 @@
   }
 
   .intro-info {
+    width: 100%;
     display: grid;
     justify-content: center;
   }
@@ -122,14 +123,7 @@
     gap: 2rem;
   }
 
-  .stack1 {
-    max-width: 360px;
-    padding: 20px;
-    line-height: 2;
-    height: 550px;
-    background-color: #fdfdfd;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-  }
+  
 
   .card1 {height: 550px; width: 360px;}
   .card1-pro {height: 550px; width: 360px;}
@@ -195,11 +189,13 @@
   .cta-demo {margin-left: 3rem;}
 
   .footer {
+    width: 100%;
     background-color: rgb(12, 19, 48);
     padding: 20px;
     color: rgb(165, 165, 165);
     height: auto;
     margin-left: 0;
+    margin-right: 0;
     margin-bottom: 0;
   }
 
@@ -207,15 +203,18 @@
     display: grid;
     justify-content: center;
     text-align: center;
-    margin-left: 4rem;
+    margin-left: 3rem;
   }
 
-  .footer-about {text-align: center; margin-left: 2.8rem;}
-  .footer-socials {margin-left: 5.5rem;}
+  .footer-about {margin-left: 1rem;}
+  .footer-socials {
+    margin-left: 5rem; 
+    margin-top: 2rem;
+  }
 
   .footer-links {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     text-wrap: nowrap;
     max-width: auto;
     margin-right: 5rem;
@@ -737,28 +736,28 @@
 
     /* About Me styles */
 
-    
-.about-button {
-  height: auto;
-  width: 250px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: white;
-  font-weight: bold;
-  font-size: medium;
-  background-color: rgb(79, 216, 79);
-  border-radius: 8px;
-  border: rgb(79, 216, 79) solid 1px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: 0s;
-}
+      
+  .about-button {
+    height: auto;
+    width: 250px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    background-color: rgb(79, 216, 79);
+    border-radius: 8px;
+    border: rgb(79, 216, 79) solid 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0s;
+  }
 
-.about-button:hover {
-  transform: translateY(0);
-  transition: all 0s ease;
-  border-color: rgb(61, 170, 61);
-  background-color: rgb(60, 170, 60);
-}
+  .about-button:hover {
+    transform: translateY(0);
+    transition: all 0s ease;
+    border-color: rgb(61, 170, 61);
+    background-color: rgb(60, 170, 60);
+  }
 }
 
 @media  screen and ((min-width: 481px) and (max-width: 600px)) {
@@ -941,7 +940,7 @@
   }
 
   .stack1 {
-    max-width: 450px;
+    max-width: 360px;
     padding: 20px;
     line-height: 2;
     height: 550px;
