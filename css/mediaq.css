@@ -36,7 +36,7 @@
   }
 
   .demo {
-    width: 80%;
+    width: 90%;
     font-weight: bold;
     font-size: 14px;
     color: white;
@@ -62,6 +62,7 @@
     background-color: rgb(81, 202, 81);
     border-radius: 8px;
     border: none;
+    margin-left: 1.5rem;
     padding: 16px;
     transition: all 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -71,7 +72,6 @@
   .demo1:hover {
     transform: translateY(0);
     transition: all 0;
-    background-color: rgb(7, 107, 7);
   }
 
   
@@ -105,9 +105,9 @@
   .hd1 {font-size: 2.5rem;}
 
   .intro-container2 {
-    max-width: 330px;
+    max-width: 360px;
     height: 550px;
-    margin-left: 2.5rem;
+    margin-left: 2rem;
     padding: 1rem 1.5rem;
   }
 
@@ -123,7 +123,7 @@
   }
 
   .stack1 {
-    max-width: 330px;
+    max-width: 360px;
     padding: 20px;
     line-height: 2;
     height: 550px;
@@ -131,8 +131,8 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   }
 
-  .card1 {height: 550px;}
-  .card1-pro {height: 550px;}
+  .card1 {height: 550px; width: 360px;}
+  .card1-pro {height: 550px; width: 360px;}
 
   #what-i-do {
     max-width: auto;
