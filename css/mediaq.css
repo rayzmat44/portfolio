@@ -2,14 +2,12 @@
 
   .body {
     align-items: center;
-    max-width: 100%;
     margin-left: 0;
-    font-size: small;
+    font-size: larger;
     margin-right: 0;
   }
 
   .body-projects {
-    max-width: 100%;
     margin-left: 0;
     font-size: small;
     margin-right: 0;
@@ -29,13 +27,29 @@
 
   #logo {
     text-align: center;
-    padding: 9px;
-    padding-top: auto;
     margin-left: 0;
-    height: 2rem;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-left: 140px;
+  }
+
+  .mobile-menu a {
+    border-bottom: gray solid 1px;
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+  }
+
+  .mobile-menu.open {
+    line-height: 2;
+    font-weight: bold;
+    font-size: 2rem;
   }
 
   .demo {
+    display: none;
     width: 80%;
     font-weight: bold;
     font-size: 14px;
@@ -74,20 +88,26 @@
     transition: all 0;
   }
 
-  
+  .logo-div {
+    margin-right: 0;
+  }
 
   .logo-anchor {
     display: flex;
+    text-wrap: nowrap;
     text-decoration: none;
     gap: 3px;
   }
   #logo.logo-name {
-    width: 80%;
-    font-size: small;
+    width: 100%;
+    font-size: 10px;
     text-wrap: nowrap;
   }
 
-  #list {display: none;}
+  #list {
+    display: none;
+    margin: 0;
+  }
   .demo {margin-left: 90px;}
 
   .intro-container {
@@ -129,7 +149,6 @@
   .card1-pro {height: 550px; width: 360px;}
 
   #what-i-do {
-    max-width: auto;
     text-align: center;
     margin-left: 0;
     padding-right: 0 1.5rem;
@@ -189,7 +208,6 @@
   .cta-demo {margin-left: 3rem;}
 
   .footer {
-    width: 100%;
     background-color: rgb(12, 19, 48);
     padding: 20px;
     color: rgb(165, 165, 165);

@@ -14,19 +14,23 @@
       
       <nav id="navigation">
        <div id="navbar">
-        <a href="index.html" class="logo-anchor">
+        <div class="logo-div">
+          <a href="index.html" class="logo-anchor">
           <div id="logo">RM</div>
           <div id="logo" class="logo_name">Raymond Matovu</div>
-        </a>
-         <ul id="list">
-        <li class="list-hover"><a href="index.html" class="link">Home</a></li>
-        <li class="list-hover"><a href="pages/webservices.html" class="link">Services</a></li>
-        <li class="list-hover"><a href="pages/projects.html" class="link">Projects</a></li>
-        <li class="list-hover"><a href="pages/about.html" class="link">About</a></li>
-        <li class="list-hover"><a href="pages/design.html" class="link">Process</a></li>
-        <li class="list-hover"><a href="pages/contact.html" class="link">Contact</a></li>
-        <li class="list-hover"><a href="pages/blog.html" class="link">Blog</a></li>
-      </ul>
+          </a>
+        </div>
+         <div class="list-div">
+          <ul id="list">
+            <li class="list-hover"><a href="index.html" class="link">Home</a></li>
+            <li class="list-hover"><a href="pages/webservices.html" class="link">Services</a></li>
+            <li class="list-hover"><a href="pages/projects.html" class="link">Projects</a></li>
+            <li class="list-hover"><a href="pages/about.html" class="link">About</a></li>
+            <li class="list-hover"><a href="pages/design.html" class="link">Process</a></li>
+            <li class="list-hover"><a href="pages/contact.html" class="link">Contact</a></li>
+            <li class="list-hover"><a href="pages/blog.html" class="link">Blog</a></li>
+          </ul>
+         </div>
         <div>
           <a href="pages/contact.html" class="link"><button class="demo">Book a demo</button></a>
           <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
@@ -36,15 +40,15 @@
        </div>
       </nav>
       <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html" onclick="navigate('home');toggleMobile()">Home</a>
-        <a href="pages/webservices.html" onclick="navigate('services');toggleMobile()">Services & Pricing</a>
-        <a href="pages/projects.html" onclick="navigate('projects');toggleMobile()">Projects</a>
-        <a href="pages/about.html" onclick="navigate('about');toggleMobile()">About Me</a>
-        <a href="pages/design.html" onclick="navigate('design');toggleMobile()">My Process</a>
-        <a href="pages/case_studies.html" onclick="navigate('case');toggleMobile()">Case Studies</a>
-        <a href="pages/blog.html" onclick="navigate('blog');toggleMobile()">Blog</a>
-        <a href="pages/faq.html" onclick="navigate('faq');toggleMobile()">FAQ</a>
-        <a href="pages/contact.html" onclick="navigate('contact');toggleMobile()">Contact</a>
+        <a href="index.html" onclick="toggleMobile()">Home</a>
+        <a href="pages/webservices.html" onclick="toggleMobile()">Services & Pricing</a>
+        <a href="pages/projects.html" onclick="toggleMobile()">Projects</a>
+        <a href="pages/about.html" onclick="toggleMobile()">About Me</a>
+        <a href="pages/design.html" onclick="toggleMobile()">My Process</a>
+        <a href="pages/case_studies.html" onclick="toggleMobile()">Case Studies</a>
+        <a href="pages/blog.html" onclick="toggleMobile()">Blog</a>
+        <a href="pages/faq.html" onclick="toggleMobile()">FAQ</a>
+        <a href="pages/contact.html" onclick="toggleMobile()">Contact</a>
       </div>
     </header>
 
@@ -435,6 +439,11 @@
         </div>
         </div>
       </footer>
-      <script src="JavaScript/main.js"></script>
+
+      <script>
+        function toggleMobile() {
+          document.getElementById('mobileMenu').classList.toggle('open');
+        }
+      </script>
   </body>
 </html>

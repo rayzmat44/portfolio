@@ -40,6 +40,10 @@
   text-decoration: none;
 }
 
+.list-div {
+  margin: 20 px;
+}
+
 .name {
   font-size: 22px;
   font-weight: bold;
@@ -358,7 +362,40 @@
   margin-bottom: 60px;
 
 }
+
+.hamburger {
+  display: none; 
+  flex-direction: column; 
+  gap: 5px;
+  background: none; 
+  border: none;
+  cursor: pointer; 
+  padding: 6px;
+}
+.hamburger span { 
+  display: block;
+  width: 22px; 
+  height: 2px; 
+  background: #111815;
+  border-radius: 2px; 
+  transition: all 0.3s;
+}
+
+.mobile-menu {
+  display: none; 
+  top: 68px; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background: #fafbf8; 
+  z-index: 199; 
+  padding: 2rem 1.5rem;
+  flex-direction: column; 
+  gap: 0;
+}
 .mobile-menu.open { display: flex; }
+
+
 .int-conts {
   margin-bottom: 40px;
 }
@@ -423,6 +460,7 @@
   border: none;
   border-radius: 8px;
   border-width: 18px;
+  margin-left: 150px;
   padding: 12px;
   padding-left: 21px;
   padding-right: 21px;
