@@ -2,8 +2,9 @@
   height: 54px;
   display: flex;
   align-items: center;
-  justify-content: stretch;
-  max-width: auto;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
   padding: 0 1.5rem;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif; 
@@ -40,17 +41,19 @@
   text-decoration: none;
 }
 
-.list-div {margin: auto;}
+.list-div {margin-right: 2rem;}
 .list-div ul {
   display: flex;
   gap: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 1rem;
 }
 
 .demo-div {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-left: auto;
   margin-right: 0;
   gap: 12px;
 }
@@ -499,8 +502,10 @@
 
 .logo-anchor {
   display: flex;
+  align-items: center;
   text-decoration: none;
   gap: 3px;
+  color: inherit;
 }
 #logo {
   font-weight: bold;
