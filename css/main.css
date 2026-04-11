@@ -3,11 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: stretch;
-<<<<<<< HEAD
   max-width: auto;
-=======
-  max-width: 1200px;
->>>>>>> origin/main
   padding: 0 1.5rem;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif; 
@@ -15,11 +11,7 @@
 
 .hr {
   font-weight: lighter;
-<<<<<<< HEAD
   color: rgb(226, 225, 225);
-=======
-  color: rgb(243, 243, 243);
->>>>>>> origin/main
   background: rgb(243, 243, 243);
   height: 0.1px;
   position: relative;
@@ -48,13 +40,10 @@
   text-decoration: none;
 }
 
-<<<<<<< HEAD
 .list-div {
   margin: 20 px;
 }
 
-=======
->>>>>>> origin/main
 .name {
   font-size: 22px;
   font-weight: bold;
@@ -73,11 +62,7 @@
 
 .intro-container {
   display: flex;
-<<<<<<< HEAD
   justify-content: center;
-=======
-  justify-content: stretch;
->>>>>>> origin/main
   gap: 20px;
   align-items: center;
   max-width: 100%;
@@ -378,11 +363,8 @@
 
 }
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> origin/main
 .int-conts {
   margin-bottom: 40px;
 }
@@ -391,11 +373,7 @@
   padding: 8px;
   justify-content: center;
   border-radius: 16px;
-<<<<<<< HEAD
   height: 450px;
-=======
-  height: 400px;
->>>>>>> origin/main
   background-color: #e4e6e1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -451,19 +429,12 @@
   border: none;
   border-radius: 8px;
   border-width: 18px;
-<<<<<<< HEAD
   margin-left: 150px;
-=======
->>>>>>> origin/main
   padding: 12px;
   padding-left: 21px;
   padding-right: 21px;
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/main
 }
 
 .demo:hover {
@@ -508,14 +479,11 @@
   background: #deffdb;
 }
 
-<<<<<<< HEAD
 .logo-anchor {
   display: flex;
   text-decoration: none;
   gap: 3px;
 }
-=======
->>>>>>> origin/main
 #logo {
   font-weight: bold;
   font-family: 'Times New Roman', Times, serif;

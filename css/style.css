@@ -1,10 +1,6 @@
 .body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-<<<<<<< HEAD
   background-color: #f8f8f8;
-=======
-  background-color: #fafbf8;
->>>>>>> origin/main
   margin: 0;
   padding: 0;
 }
@@ -49,10 +45,7 @@
 }
 
 .service-card3 {
-<<<<<<< HEAD
   position: relative;
-=======
->>>>>>> origin/main
   border: rgb(192, 192, 192) solid 1px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   border-radius: 16px;
@@ -321,7 +314,6 @@
   color:rgb(1, 117, 1);
   border-color: rgb(5, 163, 26);
   background-color: rgb(221, 255, 213);
-<<<<<<< HEAD
 }
 
 
@@ -342,6 +334,4 @@
   border-color: green;
   border: rgb(147, 218, 147) solid 1px;
   background-color: rgb(218, 255, 229);
-=======
->>>>>>> origin/main
 }
